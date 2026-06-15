@@ -42,7 +42,7 @@ jobs:
 
       # Build the book
       - name: Build the book
-        run: jupyter-book build smFISH2026 --html
+        run: jupyter-book build smFISH2026
 
       # Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
