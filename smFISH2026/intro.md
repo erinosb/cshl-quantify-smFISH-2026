@@ -2,13 +2,32 @@
 
 Welcome to the `cshl-smFISH-quantify-2026` book.
 
-This site documents a reproducible workflow for single-molecule FISH quantification, including:
-- experimental motivation and analysis goals
-- example notebook workflows
-- sample Markdown analysis pages
-- a reference notebook showing the full pipeline
+We will explore two ways of counting mRNA molecules from smFISH microscopy images. In the first example, we will use FIJI and FIJI macros that require only modest coding skills. In the second example, we will use big-fish and wormlib that require greater coding but also allow for greater extensibility, performance, and speed. 
 
-## What’s inside
+Images of _C. elegans_ early embryos will be used as input. Tables of mRNA spot counts will be captured as output. Tables can be used to plot mRNA abundance, mRNA co-localization in relation to other markers, or clustering.
+
+## Required Software
+
+Please try to install the listed software on your laptop before this session. If you have questions, we can install the software together.
+
+  * **FIJI** – please install FIJI from [FIJI](https://imagej.net/software/fiji/downloads)
+    * Choose from “Latest downloads”
+    * Mac users – if your Mac is running on an M1 – M4 Mac silicon chip, select -> macOS -> arm64. If you are using a MAC with an intel chip, select -> macOS -> x86-64.
+    * If you are unsure, I will walk you through this process
+    * All other software installations will happen in the course
+  
+## Session Outline (~ 90 minutes)
+
+| Time | Topic | Outline |
+| --- | --- | --- |
+| ~15 min | smFISH best practices | an overview of smFISH probe design, hybridization, image capture, and common pitfalls |
+| ~15 min | image file types and project organization | a survey of common microscopy file formats (.nd2, .tif, .dv); best practices in setting up a project folder; writing a README file |
+| ~30 min | FIJI mRNA spot detection | practicum on FIJI; recording, writing, running, and interacting with FIJI macros; mRNA spot detection in FIJI | 
+| ~15 min | big-fish mRNA spot detection | optional installation of big-fish; demonstration of mRNA spot detection using big-fish | 
+| ~15 min | options for downstream analysis | quick suggestions for downstream applications such as blastomere identification, marker co-localization, plotting, and high-performance computing | 
+
+
+## Learning Objectives 
 
 - **Overview** — `content`
 - **Markdown examples** — `markdown`
@@ -23,8 +42,5 @@ This site documents a reproducible workflow for single-molecule FISH quantificat
 
 ## About this site
 
-This book is built with Jupyter Book and deployed to GitHub Pages. Every change pushed to `main` will rebuild and republish the site automatically.
+This book is built with Jupyter Book and deployed to GitHub Pages. 
 
-```{admonition} Notes
-You can customize this homepage by editing `intro.md` and updating the section titles or links.
-```
