@@ -1,11 +1,30 @@
-# Welcome to your Jupyter Book
+# Quantifying smFISH, 2026
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Welcome to the `cshl-smFISH-quantify-2026` book.
 
-Check out the content pages bundled with this sample book to see more.
+This site documents a reproducible workflow for single-molecule FISH quantification, including:
+- experimental motivation and analysis goals
+- example notebook workflows
+- sample Markdown analysis pages
+- a reference notebook showing the full pipeline
 
-```{tableofcontents}
+## What’s inside
+
+- **Overview** — `content`
+- **Markdown examples** — `markdown`
+- **Notebooks** — `notebooks`
+- **Mixed Markdown + notebooks** — `markdown-notebooks`
+
+## Quick start
+
+- Read the overview and goals in [content](content.md).
+- Explore the analysis examples in [notebooks](notebooks.md).
+- See how Markdown + notebooks work together in [markdown-notebooks](markdown-notebooks.md).
+
+## About this site
+
+This book is built with Jupyter Book and deployed to GitHub Pages. Every change pushed to `main` will rebuild and republish the site automatically.
+
+```{admonition} Notes
+You can customize this homepage by editing `intro.md` and updating the section titles or links.
 ```
