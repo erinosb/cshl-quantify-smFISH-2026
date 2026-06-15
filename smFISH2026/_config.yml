@@ -8,7 +8,7 @@
 title: Quantifying smFISH 2026
 author: Erin Nishimura
 copyright: "2026"
-logo: logo.png
+logo: smFISH_square.png
 
 execute:
   execute_notebooks: force
