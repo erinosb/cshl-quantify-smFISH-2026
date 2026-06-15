@@ -25,6 +25,7 @@ jobs:
     # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
     permissions:
       pages: write
+      contents: write
       id-token: write
     steps:
       - uses: actions/checkout@v4
@@ -41,7 +42,7 @@ jobs:
 
       # Build the book
       - name: Build the book
-        run: jupyter-book build smFISH2026
+        run: jupyter-book build smFISH2026 --html
 
       # Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
