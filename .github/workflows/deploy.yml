@@ -43,13 +43,9 @@ jobs:
       - name: Build the book
         run: jupyter-book build smFISH2026
 
-      # Upload the book's HTML as an artifact
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "smFISH2026/_build/html"
-
-      # Deploy the book's HTML to GitHub Pages
+      # Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          ghp-import -n -p -f smFISH2026/_build/html
