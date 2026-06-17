@@ -19,7 +19,7 @@ You will create a directory/folder on your local computer where we will conduct 
 
 ```{image} images/Screenshot2026-06-17at2.05.37PM.png
 :alt: Screenshot of a Finder directory
-:width: 400px
+:width: 80 %
 :align: center
 ```
 
@@ -32,7 +32,10 @@ It is very important to keep track of the steps you take in a computational proj
 
 ```{image} images/Screenshot2026-06-17at2.30.02PM.png
 :alt: readme example
-:width: 400px
+:width: 80 %
 :align: center
 ```
 
+```{admonition} Best Practices
+Here's the admonition content
+```
