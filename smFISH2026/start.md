@@ -36,18 +36,18 @@ It is very important to keep track of the steps you take in a computational proj
 :align: center
 ```
 
-```{admonition} Best Practices
+:::{admonition} Best Practices
 
-** README.txt** 
+**README.txt** 
 
   * Always keep your readme files in the main project directory. Don't bury it in a subdirectory
   * Keep README.txt files up to date
   * At the end of each work session, record where you left off
 
-** File and direcotry names **
+**File and direcotry names**
 
   * Do not use spaces in names
   * Do not start names with a number
   * - and _ symbols are ok. Please avoid all others
 
-```
+:::
