@@ -44,10 +44,24 @@ It is very important to keep track of the steps you take in a computational proj
   * Keep README.txt files up to date
   * At the end of each work session, record where you left off
 
-**File and direcotry names**
+**Names of files and directories**
 
   * Do not use spaces in names
   * Do not start names with a number
   * - and _ symbols are ok. Please avoid all others
+  * Consider implementing dating system like 20260710 or 260710 that sort automatically
 
 :::
+
+## Double check your directory structure
+
+If your directory structure and README.txt file look like what is pictured below, you are all set! 
+
+```{image} images/Screenshot2026-06-17at3.47.32PM.png
+:alt: Complete directory example
+:width: 80 %
+:align: center
+```
+
+Continue on to the next lesson below. 
+
