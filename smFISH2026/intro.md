@@ -31,11 +31,34 @@ Please try to install the listed software on your laptop before this session. If
 
 By the end of this activity, students will be able to:
 
+  - Learn best practices for conducting a computational analysis project
   - Use FIJI to open image files and explore their basic features
   - Use RS-FISH quantify perform smFISH mRNA spot detection on _C. elegans_ embryo image files
   - Use FIJI macros to automate basic FIJI workflows
   - Understand alternative methods such as fish-quant v2 (Big-FISH) and wormLib
   - Envision how big-fish and wormLib could be used for a wide array of downstream applications such as embryo identification and co-localization.
+
+## Expected Results
+
+At the end of this session, students will have hands-on experience working with image files in FIJI. Students will have FIJI and the RS-FISH package installed on their local computers. Students will have generated output files that tabulate the number of mRNA spots detected in each input image file by RS-FISH (implemented in FIJI). Key parameters and logfiles will also be saved. Demonstration scripts will be included to show how the output information can be plotted.
+
+A demonstration of fish-quant v2 (Big-FISH) and wormLib will provide a more observational experience for students to illustrate how the different mRNA spot detection approaches compare in their implementation, complexity, and effectiveness.
+
+## Demo Dataset
+
+As a demonstration of smFISH spot detection, we will use 8x image files. These images were captured from 
+
+
+## Activities
+
+- [Start a computational project](start.md)
+- [Welcome to FIJI](fijiIntro.md)
+- [FIJI Plugins and Macros](pluginMacros.md) 
+- [Big-FISH and WormLib](alternatives.md)
+- [Resources and Final Thoughts](resources.md)
+
+
+Demonstrations 
 
 - **Overview** — `content`
 - **Markdown examples** — `markdown`
