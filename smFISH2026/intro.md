@@ -51,25 +51,12 @@ As a demonstration of smFISH spot detection, we will use 8x image files. These i
 
 ## Activities
 
-- [Start a computational project](start.md)
+- [Starting a computational project](start.md)
 - [Welcome to FIJI](fijiIntro.md)
-- [FIJI Plugins and Macros](pluginMacros.md) 
-- [Big-FISH and WormLib](alternatives.md)
-- [Resources and Final Thoughts](resources.md)
+- [Extending FIJI With Plugins and Macros](pluginMacros.md) 
+- [Alternatives to FIJI: Big-FISH and wormLib](alternatives.md)
+- [Final Thoughts and Resources](resources.md)
 
-
-Demonstrations 
-
-- **Overview** — `content`
-- **Markdown examples** — `markdown`
-- **Notebooks** — `notebooks`
-- **Mixed Markdown + notebooks** — `markdown-notebooks`
-
-## Quick start
-
-- Read the overview and goals in [content](content.md).
-- Explore the analysis examples in [notebooks](notebooks.md).
-- See how Markdown + notebooks work together in [markdown-notebooks](markdown-notebooks.md).
 
 ## About this site
 

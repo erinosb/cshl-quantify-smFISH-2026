@@ -1,2 +1,2 @@
 
-# Starting A Computational Project
+# Starting a computational project
