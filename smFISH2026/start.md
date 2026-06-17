@@ -17,9 +17,9 @@ You will create a directory/folder on your local computer where we will conduct 
 
    - If you did this correctly, your file structure should look like this:
 
-```{image} images/images/Screenshot2026-06-17at2.05.37PM.png
+```{image} images/Screenshot2026-06-17at2.05.37PM.png
 :alt: Screenshot of a Finder directory
-:width: 200px
+:width: 400px
 :align: center
 ```
 
@@ -32,7 +32,7 @@ It is very important to keep track of the steps you take in a computational proj
 
 ```{image} images/Screenshot2026-06-17at2.30.02PM.png
 :alt: readme example
-:width: 200px
+:width: 400px
 :align: center
 ```
 
