@@ -4,7 +4,8 @@
 format: jb-book
 root: intro
 chapters:
-- file: content
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: start
+- file: fijiIntro
+- file: pluginMacros
+- file: alternatives
+- file: resources
