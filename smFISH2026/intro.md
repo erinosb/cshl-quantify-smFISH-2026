@@ -1,8 +1,8 @@
 # Quantifying smFISH, 2026
 
-Welcome to the `cshl-smFISH-quantify-2026` book.
+Welcome to the `cshl-quantify-smFISH-2026` book.
 
-We will explore two ways of counting mRNA molecules from smFISH microscopy images. In the first example, we will use FIJI and FIJI macros that require only modest coding skills. In the second example, we will use big-fish and wormlib that require greater coding but also allow for greater extensibility, performance, and speed. 
+We will explore two ways of counting mRNA molecules from smFISH microscopy images. In the first example, we will use FIJI and FIJI macros that require only modest coding skills. In the second example, we will use `big-fish` and `wormlib` that require greater coding but also allow for greater extensibility, performance, and speed.
 
 Images of _C. elegans_ early embryos will be used as input. Tables of mRNA spot counts will be captured as output. Tables can be used to plot mRNA abundance, mRNA co-localization in relation to other markers, or clustering.
 
@@ -28,6 +28,14 @@ Please try to install the listed software on your laptop before this session. If
 
 
 ## Learning Objectives 
+
+By the end of this activity, students will be able to:
+
+  - Use FIJI to open image files and explore their basic features
+  - Use RS-FISH quantify perform smFISH mRNA spot detection on _C. elegans_ embryo image files
+  - Use FIJI macros to automate basic FIJI workflows
+  - Understand alternative methods such as fish-quant v2 (Big-FISH) and wormLib
+  - Envision how big-fish and wormLib could be used for a wide array of downstream applications such as embryo identification and co-localization.
 
 - **Overview** — `content`
 - **Markdown examples** — `markdown`
