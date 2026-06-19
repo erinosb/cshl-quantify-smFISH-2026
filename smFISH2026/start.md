@@ -23,6 +23,8 @@ You will create a directory/folder on your local computer where we will conduct 
 :align: center
 ```
 
+***
+
 ## Create a README.txt file
 
 It is very important to keep track of the steps you take in a computational project. This will be important to stay on task from day to day and to remind yourself what you have done when you look back on the project. Follow along:
@@ -48,10 +50,12 @@ It is very important to keep track of the steps you take in a computational proj
 
   * Do not use spaces in names
   * Do not start names with a number
-  * - and _ symbols are ok. Please avoid all others
+  * \- and \_ symbols are ok. Please avoid all others
   * Consider implementing dating system like 20260710 or 260710 that sort automatically
 
 :::
+
+***
 
 ## Double check your directory structure
 
