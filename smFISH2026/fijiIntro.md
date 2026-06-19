@@ -13,13 +13,13 @@ Additional Plugins can be created by the community and installed as needed.
 
 ## Brief Overview of FIJI
 
-**Quick FIJI tutorial - follow along** 
+### Quick FIJI tutorial - follow along
 
   * Open FIJI
   * Explore the menus
   * The toolbar contains tools, status, and search
 
-**Let's open a file** 
+### Let's open a file
 
   * In your finder or explorer, locate the following file:
     * `~/260610_quantify_smFISH/01_raw_images/Spike_Fig6/230505_DG3913_06_R3D.dv`
@@ -41,7 +41,7 @@ Additional Plugins can be created by the community and installed as needed.
   * **Z** - toggles between the Z-stacks
   * Slide the **C** and **Z** sliders to explore the image
 
-**Let's adjust the brightness**
+### Let's adjust the brightness
 
 
 ```{Note}
