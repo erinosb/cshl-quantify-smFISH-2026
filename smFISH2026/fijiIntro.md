@@ -43,7 +43,6 @@ Additional Plugins can be created by the community and installed as needed.
 
 **Let's adjust the brightness**
 
-{octicon}`mark-github` 
 
 ```{Note}
 Adjusting the brightness will not alter the underlying information within your file. It will change the way the image is displayed on your screen.
@@ -74,7 +73,7 @@ Set - use "Propatage to all other # channel images" to synchronize the brightnes
 
 ```
 
-
+{octicon}`mark-github` 
 
 
 
