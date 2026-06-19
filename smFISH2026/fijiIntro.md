@@ -43,8 +43,41 @@ Additional Plugins can be created by the community and installed as needed.
 
 **Let's adjust the brightness**
 
+{octicon}`mark-github` 
 
-{octicon}`mark-github`
+```{Note}
+Adjusting the brightness will not alter the underlying information within your file. It will change the way the image is displayed on your screen.
+```
+
+  * Adjust brightness by selecting from Menu Bar `Image -> Adjust -> Brigthness/Constrast`
+
+```{image} images/Screenshot2026-06-19at5-29-41AM.png
+:alt: Screenshot of a FIJI
+:width: 80 %
+:align: center
+```
+
+  * Set your **Z** to a middle section
+  * Set your **C** to channel 1
+  * Slide `Maximum` and `Minimum` sliders to explore how these alter the image
+  * Slide `Brightness` and `Contrast` to explore how these alter the image
+
+```{Note}
+This will only change the brightness of the selected channel. Each channel will need to be adjusted individually
+```
+
+```{Tip}
+
+Auto - if you open a file that is totally black. Press Auto to give you somewhere to start from
+
+Set - use "Propatage to all other # channel images" to synchronize the brightness and contrast among multiple open images
+
+```
+
+
+
+
+
 
 
 
