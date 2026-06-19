@@ -44,7 +44,7 @@ Additional Plugins can be created by the community and installed as needed.
 **Let's adjust the brightness**
 
 
-
+{octicon}`mark-github`
 
 
 
