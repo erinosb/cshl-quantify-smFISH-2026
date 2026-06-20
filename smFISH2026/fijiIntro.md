@@ -76,6 +76,18 @@ Set - use "Propatage to all other # channel images" to synchronize the brightnes
 {octicon}`mark-github` 
 
 
+## Optional Content
+
+Watch this brief demonstration of some basic FIJI capabilities
+
+  * ` Image -> Stacks -> Z Project` to flatten Z-dimensions
+  * ` Image -> Transform -> Rotate ...` to rotate an image
+  * ` Image -> Color -> Split Channels ` to split the channels into individual files
+  * ` Image -> Color -> Merge Channels ` to merge channels and assign colors
+  * Using the toolbar, select ` Rectangle ` and draw a rectangle around your image to select a part of it
+  * ` Image -> Crop ` to crop your image
+  * ` Analyze -> Set Scale ` to set the scale of your pixels per microns
+  * ` Analyze -> Tools -> Scale Bar ... ` to add a 10 micron scale bar. Make sure to click "Hide text"
 
 
 
