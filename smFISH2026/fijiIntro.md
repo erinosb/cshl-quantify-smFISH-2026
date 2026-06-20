@@ -17,7 +17,23 @@ Additional Plugins can be created by the community and installed as needed.
 
   * Open FIJI
   * Explore the menus
-  * The toolbar contains tools, status, and search
+
+
+```{image} images/Screenshot2026-06-19at5-30-57AM.png
+:alt: FIJI Menu Description
+:width: 60 %
+:align: center
+```
+
+  * Explore the toolbar. It contains tools, status, and search
+
+```{image} images/fiji-main-window.png
+:alt: FIJI toolbar depiction from https://imagej.net/learn/
+:width: 80 %
+:align: center
+```
+
+
 
 ### Let's open a file
 
@@ -67,30 +83,33 @@ This will only change the brightness of the selected channel. Each channel will 
 
 ```{Tip}
 
-Auto - if you open a file that is totally black. Press Auto to give you somewhere to start from
+Auto - Automatically adjusts the max/min to 0.35 brightness levels. If you open a file that is totally black, press Auto to start
 
-Set - use "Propatage to all other # channel images" to synchronize the brightness and contrast among multiple open images
+Set - Synchronizes the brightness and contrast among multiple open images with the "Propatage to all other # channel images" option
 
 ```
 
-{octicon}`mark-github` 
-
-
 ## Optional Content
+
 
 Watch this brief demonstration of some basic FIJI capabilities
 
-  * ` Image -> Stacks -> Z Project` to flatten Z-dimensions
-  * ` Image -> Transform -> Rotate ...` to rotate an image
-  * ` Image -> Color -> Split Channels ` to split the channels into individual files
-  * ` Image -> Color -> Merge Channels ` to merge channels and assign colors
-  * Using the toolbar, select ` Rectangle ` and draw a rectangle around your image to select a part of it
-  * ` Image -> Crop ` to crop your image
-  * ` Analyze -> Set Scale ` to set the scale of your pixels per microns
-  * ` Analyze -> Tools -> Scale Bar ... ` to add a 10 micron scale bar. Make sure to click "Hide text"
+  1. ` Image -> Stacks -> Z Project` to flatten Z-dimensions
+  2. ` Image -> Transform -> Rotate ...` to rotate an image
+  3. ` Image -> Color -> Split Channels ` to split the channels into individual files
+  4. ` Image -> Color -> Merge Channels ` to merge channels and assign colors
+  5. Using the toolbar, select ` Rectangle ` and draw a rectangle around your image to select a part of it
+  6. ` Image -> Crop ` to crop your image
+  7. ` Analyze -> Set Scale ` to set the scale of your pixels per microns
+  8. ` Analyze -> Tools -> Scale Bar ... ` to add a 10 micron scale bar. Make sure to click "Hide text"
+
+Final product:
 
 
-
-
+```{image} images/260710_DG3913_image06_composite.png
+:alt: A multi-color picture of a C. elegans embryo
+:width: 80 %
+:align: center
+```
 
 
