@@ -23,7 +23,7 @@ In general, Plugins are divided into four categories:
   3. Plugings that can be installed through `Update ... `
   4. Plugins that must be manually installed
 
-Today, we will use the Radial Symmetry Plugin, also called RS-FISH.
+Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be installed through `Upate ...`
 
 ## Let's Download and Install RS-FISH
 
@@ -43,7 +43,39 @@ Today, we will use the Radial Symmetry Plugin, also called RS-FISH.
 
 ---
 
-## mRNA Spot Detection with RS-FISH 
+## RS-FISH uses Raidal Symmetry, Gaussians, and Outlier Removal for Improved mRNA Spot Detection
+
+Detecting and counting puncta within an image presents several challenges for any image-processing software. These are: 
+
+  * Can we use a 3D image, or do we need to flatten it to 2D?
+  * How can we resolve spots that are close together? Clusters?
+  * The X and Y dimensions are captured at one resolution, the Z-dimension is captured at a different (poorer) resolution. This will impact what we select as a "point"
+  * Out-of-focus light appears in many Z-stacks. How does this impact the algorithm?
+  * How do we deal with background? 
+  * How do we deal with multiple regions of interest in an image?
+  * How will we process files in batch?
+
+The RS-FISH Approach
+
+  * 3D and 2D - ok
+  * The **Detection of Gaussian** algorithm is used to identify spots and resolve spots that are close together (also, working in 3D help). 
+     * **RANSAC** - This is SM-FISH's Remove Outlier function. The ideas is to improve accuracy.
+     * **Multiconsensus RANSAC** - This computationally intensive Remove Outlier function that can more accurately resolve densely arranged spots.
+  * **Anisotropy Coefficient** RS-FISH calculates this coefficient to account for the resolution differences between X, Y, and Z. This virtually corrects for the lower resolution and out-of-focus light in the Z-direction.
+  * **Binary masks** can be applied to ignore background or select multiple regions-of-interest per image (2 or more embryos per image)
+  * **Macros** are used to process all files in a directory in **batch** mode.
+
+The RS-FISH Steps:
+
+  1. Calculate Anisotropy Coefficient
+  2. Detect and Count Spots
+  3. Optionally - Filter spots using binary mask(s)
+
+## Let's detect spots with smFISH
+
+### Calculate Anisotropy Coefficient
+
+
 
 
 
