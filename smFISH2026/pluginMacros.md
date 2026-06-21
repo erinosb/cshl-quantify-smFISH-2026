@@ -37,7 +37,7 @@ Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be in
 
 ```{image} images/Screenshot2026-06-21at9-01-36AM.png
 :alt: Screenshot of RS-FISH Plugin list
-:width: 60 %
+:width: 40 %
 :align: center
 ```
 
@@ -49,7 +49,7 @@ Detecting and counting puncta within an image presents several challenges for an
 
   * Can we use a 3D image, or do we need to flatten it to 2D?
   * How can we resolve spots that are close together? Clusters?
-  * The X and Y dimensions are captured at one resolution, the Z-dimension is captured at a different (poorer) resolution. This will impact what we select as a "point"
+  * The X and Y dimensions are captured at one resolution, the Z-dimension is captured at a different "resolution". This will impact what we select as a "point"
   * Out-of-focus light appears in many Z-stacks. How does this impact the algorithm?
   * How do we deal with background? 
   * How do we deal with multiple regions of interest in an image?
@@ -64,6 +64,8 @@ The RS-FISH Approach
   * **Anisotropy Coefficient** RS-FISH calculates this coefficient to account for the resolution differences between X, Y, and Z. This virtually corrects for the lower resolution and out-of-focus light in the Z-direction.
   * **Binary masks** can be applied to ignore background or select multiple regions-of-interest per image (2 or more embryos per image)
   * **Macros** are used to process all files in a directory in **batch** mode.
+
+
 
 The RS-FISH Steps:
 
