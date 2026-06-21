@@ -43,9 +43,11 @@ Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be in
 
 ---
 
-## RS-FISH uses Raidal Symmetry, Gaussians, and Outlier Removal for Improved mRNA Spot Detection
+## The RS-FISH Approach
 
-Detecting and counting puncta within an image presents several challenges for any image-processing software. These are: 
+RS-FISH uses Raidal Symmetry, Gaussians, and Outlier Removal for Improved mRNA Spot Detection to tackle common issues that arise when detecting and counting puncta. 
+
+**Common issues, questions, and decisions associated with spot detection:**
 
   * Can we use a 3D image, or do we need to flatten it to 2D?
   * How can we resolve spots that are close together? Clusters?
@@ -55,7 +57,7 @@ Detecting and counting puncta within an image presents several challenges for an
   * How do we deal with multiple regions of interest in an image?
   * How will we process files in batch?
 
-### The RS-FISH Approach
+**RS-FISH Answers**
 
   * 3D and 2D - ok
   * The **Detection of Gaussian** algorithm is used to identify spots and resolve spots that are close together (also, working in 3D help). 
@@ -91,9 +93,9 @@ Click along with me...
   * You will receive a Anisotropy Coefficient. Write it down or export/save it (your README file is a good place).
 
 
-## 2. Let's determine the optimal settings
+### 2. Let's determine the optimal settings
 
-### To determine the optimal settings, we'll use a Z-projection of Channel 1. 
+**To determine the optimal settings, we'll use a Z-projection of Channel 1.**
 
 Click along with me...
 
@@ -132,7 +134,7 @@ Click along with me...
 :align: center
 ```
 
-### Set the intensity threshold
+**Set the intensity threshold**
 
 Some low-intensity spots are not real. You can remove them if you like. 
 
