@@ -29,7 +29,7 @@ Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be in
 
   * Go to `Help -> Update ... `
   * Click `Mange update sites`
-  * Search for `radial symmetry`
+  * Type `radial symmetry` into the search bar
   * Select the box to the left of `Radial Symmetry`
   * Click `Apply and Close`
   * Restart FIJI
