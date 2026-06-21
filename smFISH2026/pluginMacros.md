@@ -5,10 +5,8 @@
   * [ImageJ List of Extensions](https://imagej.net/list-of-extensions)
   * [FIJI Plugin Tutorial](https://imagej.net/plugins/)
   * [RS-FISH Instructions and Github](https://github.com/PreibischLab/RS-FISH/tree/master)
-  * [RS-FISH Paper]()
+  * Bahry E, Breimann L, Zouinkhi M, Epstein L, Kolyvanov K, Mamrak N, King B, Long X, Harrington KIS, Lionnet T, Preibisch S. [RS-FISH: precise, interactive, fast, and scalable FISH spot detection.](https://www.nature.com/articles/s41592-022-01669-y). Nat Methods. 2022 Dec;19(12):1563-1567. Epub 2022 Nov 17. PMID: 36396787; PMCID: PMC9718671.
   * [image.sc Forum](https://forum.image.sc/)
-
-Bahry E, Breimann L, Zouinkhi M, Epstein L, Kolyvanov K, Mamrak N, King B, Long X, Harrington KIS, Lionnet T, Preibisch S. [RS-FISH: precise, interactive, fast, and scalable FISH spot detection.](https://www.nature.com/articles/s41592-022-01669-y). Nat Methods. 2022 Dec;19(12):1563-1567. Epub 2022 Nov 17. PMID: 36396787; PMCID: PMC9718671.
 
 ---
 
@@ -29,7 +27,29 @@ Today, we will use the Radial Symmetry Plugin, also called RS-FISH.
 
 ## Let's Download and Install RS-FISH
 
-  * 
+  * Go to `Help -> Update ... `
+  * Click `Mange update sites`
+  * Search for `radial symmetry`
+  * Select the box to the left of `Radial Symmetry`
+  * Click `Apply and Close`
+  * Restart FIJI
+  * Check your installation was successful. Go to the `Plugin` Menu. You should now see the RS-FISH Plugin listed
+
+```{image} images/Screenshot2026-06-21at9-01-36AM.png
+:alt: Screenshot of RS-FISH Plugin list
+:width: 60 %
+:align: center
+```
+
+---
+
+## mRNA Spot Detection with RS-FISH 
+
+
+
+
+
+
 
 
 
