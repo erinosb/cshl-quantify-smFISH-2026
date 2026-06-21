@@ -93,7 +93,7 @@ Click along with me...
 
 ## 2. Let's determine the optimal settings
 
-To determine the optimal settings, we'll use a Z-projection of Channel 1. 
+### To determine the optimal settings, we'll use a Z-projection of Channel 1. 
 
 Click along with me...
 
@@ -113,8 +113,36 @@ Click along with me...
     * Spot Intensity: Linear Interpolation
     * Add Detections to ROI-Manager: check
 
-```{image} images/Screenshot2026-06-21at3-46-45PM.png
+```{image} images/Screenshot2026-06-21at4-14-44PM.png
 :alt: Screenshot of RS-FISH settings
+:width: 50 %
+:align: center
+```
+
+  * Organize your windows so that you can see both the MAX-C1 window and the RANSAC preview window.
+  * Place the rectangle within a region with mRNA spots
+  * Zoom in and use the `hand` tool from the toolkit bar to scootch to a good spot
+  * Toggle through `Sigma`, `Threshold`, `Support region radius`, `Inlier ratio`, `Max error`. Keep background subtraction off. 
+  * Make some choices - what looks real to you?
+  * Press any `Done`
+
+```{image} images/Screenshot2026-06-21at4-18-48PM.png
+:alt: Screenshot of RS-FISH options
+:width: 50 %
+:align: center
+```
+
+### Set the intensity threshold
+
+Some low-intensity spots are not real. You can remove them if you like. 
+
+  * Organize your windows so that you can see both the **MAX-C1** window and the **Intensity distribution** window
+  * Click within the grey shaded plot to move the blue horizontal line
+  * You will see some spots disappear. 
+  * Make some choices - which do you think look real?
+
+```{image} images/Screenshot2026-06-21at4-24-24PM.png
+:alt: Screenshot of RS-FISH options
 :width: 50 %
 :align: center
 ```
