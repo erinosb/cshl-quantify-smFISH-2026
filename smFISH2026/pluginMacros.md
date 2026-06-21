@@ -49,13 +49,13 @@ Detecting and counting puncta within an image presents several challenges for an
 
   * Can we use a 3D image, or do we need to flatten it to 2D?
   * How can we resolve spots that are close together? Clusters?
-  * The X and Y dimensions are captured at one resolution, the Z-dimension is captured at a different "resolution". This will impact what we select as a "point"
+  * The X and Y dimensions are captured at one resolution, the Z-dimension is captured at a different "resolution".
   * Out-of-focus light appears in many Z-stacks. How does this impact the algorithm?
   * How do we deal with background? 
   * How do we deal with multiple regions of interest in an image?
   * How will we process files in batch?
 
-The RS-FISH Approach
+### The RS-FISH Approach
 
   * 3D and 2D - ok
   * The **Detection of Gaussian** algorithm is used to identify spots and resolve spots that are close together (also, working in 3D help). 
@@ -65,17 +65,63 @@ The RS-FISH Approach
   * **Binary masks** can be applied to ignore background or select multiple regions-of-interest per image (2 or more embryos per image)
   * **Macros** are used to process all files in a directory in **batch** mode.
 
-
-
-The RS-FISH Steps:
+### The RS-FISH Steps:
 
   1. Calculate Anisotropy Coefficient
-  2. Detect and Count Spots
-  3. Optionally - Filter spots using binary mask(s)
+  2. Determine optimal settings
+  3. Detect and Count Spots
+  4. Optionally - Filter spots using binary mask(s)
 
 ## Let's detect spots with smFISH
 
-### Calculate Anisotropy Coefficient
+### 1. Let's Calculate Anisotropy Coefficient
+
+Click along with me...
+
+  * **Start Macro Recording**. FIJI will record all your clicks, settings, and toggles by recording them. This will convert pushing and clicking into text commands. This will be helpful later as you start to write your own macros.
+    * Select the `Plugins` Menu -> `Macros` -> `Record`
+  * Open `230505_DG3913_06_R3D.dv` if it is not open already. (hint - drat & drop into the status bar)
+  * Select `Image` -> `Color` -> `Split Channels` to split the image into separate channels as RS-FISH can only work on one channel at a time.
+  * Select `Plugins` -> `RS-FISH` -> `Tools` -> `Calculate Anisotropy Coefficient`.
+  *  Select Image: `C1-230505_DG3913_06_R3D.dv` from the pull down menu. Select Detection Mode; `Gauss Fit`
+  * Move the rectangle to a place within the embryo that has spots. Use the default Sigma and Threshold values (these typically look pretty good). 
+    * You can adjust Sigma to account for larger or smaller spots or Threshold to account for darker or lighter contrast
+    * For now, let's just use the defaults. Sigma: `1.50`. Threshold: `0.0050`
+  * Select `Done`
+  * You will receive a Anisotropy Coefficient. Write it down or export/save it (your README file is a good place).
+
+
+## 2. Let's determine the optimal settings
+
+To determine the optimal settings, we'll use a Z-projection of Channel 1. 
+
+Click along with me...
+
+  * Close out all extra windows and panels
+  * Drag and drop `230505_DG3913_06_R3D.dv` into the status bar to open
+  * Split out channels. Select `Image` -> `Color` -> `Split Channels`
+  * Select Channel 1. Select `Window` -> `C1-230505_DG3913_06_R3D.dv`
+  * Z-Projection. Select `Image` -> `Stacks` -> `Z-Project`
+  * Select start slice (1) and stop slice (51) and Projection Type: `Max Intensity`
+  * Set levels. Select `Plugins` -> `RS-FISH` -> `RS-FISH`
+  * Select the Channel 1 Image. Image: `C1-230505_DG3913_06_R3D.dv`. Set the values below:
+    * Mode: `Interactive`
+    * Anisotropy Coefficient: This should be your calculated coefficient. Double-check it.
+    * Robust Fitting: RANSAC
+    * Compute Max/Min intnsity from image: check
+    * Use anisotropy coefficient for DoG: check
+    * Spot Intensity: Linear Interpolation
+    * Add Detections to ROI-Manager: check
+
+```{image} images/Screenshot2026-06-21at3-46-45PM.png
+:alt: Screenshot of RS-FISH settings
+:width: 50 %
+:align: center
+```
+
+
+
+
 
 
 
