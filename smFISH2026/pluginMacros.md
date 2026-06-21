@@ -128,7 +128,7 @@ Click along with me...
 
 ```{image} images/Screenshot2026-06-21at4-18-48PM.png
 :alt: Screenshot of RS-FISH options
-:width: 50 %
+:width: 80 %
 :align: center
 ```
 
@@ -143,7 +143,7 @@ Some low-intensity spots are not real. You can remove them if you like.
 
 ```{image} images/Screenshot2026-06-21at4-24-24PM.png
 :alt: Screenshot of RS-FISH options
-:width: 50 %
+:width: 80 %
 :align: center
 ```
 
