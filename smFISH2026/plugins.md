@@ -1,4 +1,4 @@
-# Extending FIJI With Plugins and Macros
+# Extending FIJI With Plugins
 
 ## References and Resources
 
