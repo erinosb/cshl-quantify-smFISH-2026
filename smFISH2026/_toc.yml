@@ -6,6 +6,7 @@ root: intro
 chapters:
 - file: start
 - file: fijiIntro
-- file: pluginMacros
+- file: plugins
+- file: macros
 - file: alternatives
 - file: resources
