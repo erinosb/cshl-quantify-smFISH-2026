@@ -95,7 +95,7 @@ Click along with me...
 
 ### 2. Let's determine the optimal settings
 
-**To determine the optimal settings, we'll use a Z-projection of Channel 1.**
+#### To determine the optimal settings, we'll use a Z-projection of Channel 1.**
 
 Click along with me...
 
@@ -130,11 +130,11 @@ Click along with me...
 
 ```{image} images/Screenshot2026-06-21at4-18-48PM.png
 :alt: Screenshot of RS-FISH options
-:width: 80 %
+:width: 100 %
 :align: center
 ```
 
-**Set the intensity threshold**
+#### Set the intensity threshold
 
 Some low-intensity spots are not real. You can remove them if you like. 
 
@@ -148,6 +148,68 @@ Some low-intensity spots are not real. You can remove them if you like.
 :width: 80 %
 :align: center
 ```
+
+### 3. Let's detect and count mRNA spots
+
+We will count spots in both Channel 1 (_set-3_ mRNA control) and Channel 2 (_lin-41_ mRNA querry). Make sure you have both of these single-channel multi-stack files **C1-230505_DG3913_06_R3D.dv** and **C2-230505_DG3913_06_R3D.dv**. 
+
+Click along with me...
+
+  * Select `Plugins` -> `RS-FISH` -> `RS-FISH`
+  * Select Image: `C1-230505_DG3913_06_R3D.dv`
+  * This time, select Mode: `Advanced`. This will auto-propagate the settings you defined in the last exercise.
+  * My screen looks like this: 
+
+```{image} images/Screenshot2026-06-22at5-31-44AM.png
+:alt: Screenshot of RS-FISH settings
+:width: 80 %
+:align: center
+```
+
+  * Click `OK`
+  * Advanced Settings Window. You shouldn't need to change or click anything. Just in case this is helpful, my screen looks like this...
+
+```{image} images/Screenshot2026-06-22at5-32-00AM.png
+:alt: Screenshot of RS-FISH Advanced Settings
+:width: 80 %
+:align: center
+```
+
+  * Click `OK`
+
+#### Assess the results
+
+  * We now have an **ROI Manager** (Region of Interest), a **Results List**, information in the **Log**, and our original .dv file. 
+  * In the ROI Manager, click on `Show All`. 
+  * Slide through the Z axis of the image file to explore what was counted as a spot.
+
+```{image} images/Screenshot2026-06-22at5-33-31AM.png
+:alt: Screenshot of RS-FISH Results
+:width: 100 %
+:align: center
+```
+
+#### Save the results
+
+  * Save the Results list. This can be a little tricky. Click on the results list until the menu options change to only a list of four menus, like so:
+
+```{image} images/Screenshot2026-06-22at5-43-33AM.png
+:alt: Screenshot of RS-FISH menus
+:width: 30 %
+:align: center
+```
+
+  * Save the file in the sub-directory 03_fiji_analysis with a name that makes sense like `260710_set-3_ch1_C1_230505_DG3913_06_smFISHlocalizations.csv`
+  * Save the relevant portion of the logfile into a text editor. Save this also to the 03_fiji_analysis subdirectory
+
+#### Repeat for Channel 2
+
+  * Select `Plugins` -> `RS-FISH` -> `RS-FISH`
+  * This time, select Image: `C2-230505_DG3913_06_R3D.dv`
+  * Mode: `Advanced`
+  * Click `OK`
+  * Click `OK`
+
 
 
 
