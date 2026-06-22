@@ -162,7 +162,7 @@ Click along with me...
 
 ```{image} images/Screenshot2026-06-22at5-31-44AM.png
 :alt: Screenshot of RS-FISH settings
-:width: 80 %
+:width: 50 %
 :align: center
 ```
 
@@ -171,7 +171,7 @@ Click along with me...
 
 ```{image} images/Screenshot2026-06-22at5-32-00AM.png
 :alt: Screenshot of RS-FISH Advanced Settings
-:width: 80 %
+:width: 50 %
 :align: center
 ```
 
@@ -195,7 +195,7 @@ Click along with me...
 
 ```{image} images/Screenshot2026-06-22at5-43-33AM.png
 :alt: Screenshot of RS-FISH menus
-:width: 30 %
+:width: 20 %
 :align: center
 ```
 
@@ -254,11 +254,28 @@ For Option 1, we will use an automated approach to create a dynamic, 3D mask. Fo
   * To save the mask, go to `File` -> `Save As` -> `Tiff...`
   * Save in a masks sub-directory.
 
-### Option 1 - hand-drawn, 2D mask
+### Option 2 - hand-drawn, 2D mask
 
+  * Select the image `C3-230505_DG3913_06_R3D_mask2.dv`
+  * From the toolbar, select the `Polygon` tool
+  * Draw an outline around the embryo with the polygon tool. Be sure to connect the starting and ending nodes together to create a shape. It should look like this...
 
+```{image} images/Screenshot2026-06-22at6-47-22AM.png
+:alt: Screenshot of RS-FISH polygone
+:width: 60 %
+:align: center
+```
 
+  * To make the mask, selct `Edit` -> `Selection` -> `Create Mask`
+  * This will create a new 2D image file. 
+  * Save it in your same masks, sub-directory.
 
+### Filter mRNA spot detection by mask
+
+To use the mask, you must first run mRNA spot detection and then filter out un-masked spots.
+
+  * Select `Plugins` -> `RS-FISH` -> `Tools` -> `Mask Filtering`
+  * 
 
 
 
