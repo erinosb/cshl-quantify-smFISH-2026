@@ -1,0 +1,58 @@
+Running Jupyter-Book v0.15.1
+Source Folder: /Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026
+Config Path: /Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/_config.yml
+Output Path: /Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/_build/html
+[sphinxcontrib-bibtex] Beware that docutils versions 0.18 and 0.19 (you are running 0.18.1) are known to generate invalid html for citations. If this issue affects you, please use docutils<0.18 (or >=0.20 once released) instead. For more details, see https://sourceforge.net/p/docutils/patches/195/
+[01mRunning Sphinx v5.0.2[39;49;00m
+[01mmaking output directory... [39;49;00mdone
+[91mWARNING: favicon file 'favicon.ico' does not exist[39;49;00m
+[etoc] Changing master_doc to 'intro'
+checking bibtex cache... out of date
+parsing bibtex file /Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/references.bib... parsed 5 entries
+[01mmyst v0.18.1:[39;49;00m MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions=['colon_fence', 'dollarmath', 'linkify', 'substitution', 'tasklist'], disable_syntax=[], all_links_external=False, url_schemes=['mailto', 'http', 'https'], ref_domains=None, highlight_code_blocks=True, number_code_blocks=[], title_to_header=False, heading_anchors=None, heading_slug_func=None, footnote_transition=True, words_per_minute=200, sub_delimiters=('{', '}'), linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area')
+[01mmyst-nb v0.17.2:[39;49;00m NbParserConfig(custom_formats={}, metadata_key='mystnb', cell_metadata_key='mystnb', kernel_rgx_aliases={}, execution_mode='force', execution_cache_path='', execution_excludepatterns=[], execution_timeout=30, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=False, render_plugin='default', remove_code_source=False, remove_code_outputs=False, code_prompt_show='Show code cell {type}', code_prompt_hide='Hide code cell {type}', number_source_lines=False, output_stderr='show', render_text_lexer='myst-ansi', render_error_lexer='ipythontb', render_image_options={}, render_figure_options={}, render_markdown_format='commonmark', output_folder='build', append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: /Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/_build/.jupyter_cache
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 11 source files that are out of date
+[01mupdating environment: [39;49;00m[new config] 11 added, 0 changed, 0 removed
+[01mreading sources... [39;49;00m[  9%] [35malternatives[39;49;00m                                          [01mreading sources... [39;49;00m[ 18%] [35mexamples/content[39;49;00m                                      [01mreading sources... [39;49;00m[ 27%] [35mexamples/markdown[39;49;00m                                     [01mreading sources... [39;49;00m[ 36%] [35mexamples/markdown-notebooks[39;49;00m                           /Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/examples/markdown-notebooks.md: Executing notebook using local CWD [mystnb]
+/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/examples/markdown-notebooks.md: Executed notebook in 0.62 seconds [mystnb]
+[01mreading sources... [39;49;00m[ 45%] [35mexamples/notebooks[39;49;00m                                    /Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/examples/notebooks.ipynb: Executing notebook using local CWD [mystnb]
+/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/examples/notebooks.ipynb: Executed notebook in 0.96 seconds [mystnb]
+[01mreading sources... [39;49;00m[ 54%] [35mfijiIntro[39;49;00m                                             [01mreading sources... [39;49;00m[ 63%] [35mintro[39;49;00m                                                 [01mreading sources... [39;49;00m[ 72%] [35mmacros[39;49;00m                                                [01mreading sources... [39;49;00m[ 81%] [35mplugins[39;49;00m                                               [01mreading sources... [39;49;00m[ 90%] [35mresources[39;49;00m                                             [01mreading sources... [39;49;00m[100%] [35mstart[39;49;00m                                                 
+[91m/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/intro.md:: WARNING: toctree contains reference to nonexisting document 'pluginMacros' [etoc.ref][39;49;00m
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00m[91m/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/examples/content.md: WARNING: document isn't included in any toctree[39;49;00m
+[91m/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/examples/markdown.md: WARNING: document isn't included in any toctree[39;49;00m
+[91m/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/examples/markdown-notebooks.md: WARNING: document isn't included in any toctree[39;49;00m
+[91m/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/examples/notebooks.ipynb: WARNING: document isn't included in any toctree[39;49;00m
+[91m/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/macros.md: WARNING: document isn't included in any toctree[39;49;00m
+[91m/Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/plugins.md: WARNING: document isn't included in any toctree[39;49;00m
+done
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[  9%] [32malternatives[39;49;00m                                           [01mwriting output... [39;49;00m[ 18%] [32mexamples/content[39;49;00m                                       [01mwriting output... [39;49;00m[ 27%] [32mexamples/markdown[39;49;00m                                      [01mwriting output... [39;49;00m[ 36%] [32mexamples/markdown-notebooks[39;49;00m                            [01mwriting output... [39;49;00m[ 45%] [32mexamples/notebooks[39;49;00m                                     [01mwriting output... [39;49;00m[ 54%] [32mfijiIntro[39;49;00m                                              [01mwriting output... [39;49;00m[ 63%] [32mintro[39;49;00m                                                  [01mwriting output... [39;49;00m[ 72%] [32mmacros[39;49;00m                                                 [01mwriting output... [39;49;00m[ 81%] [32mplugins[39;49;00m                                                [01mwriting output... [39;49;00m[ 90%] [32mresources[39;49;00m                                              [01mwriting output... [39;49;00m[100%] [32mstart[39;49;00m                                                  
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[  5%] [33m_build/jupyter_execute/6d74b9abc36bf12bacb2941621b662848e6565366f81c1c0324aaa62acb5b276.png[39;49;00m[01mcopying images... [39;49;00m[ 10%] [33mimages/Screenshot2026-06-19at5-30-57AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 15%] [33mimages/fiji-main-window.png[39;49;00m                            [01mcopying images... [39;49;00m[ 21%] [33mimages/Screenshot2026-06-19at5.25.43AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 26%] [33mimages/Screenshot2026-06-19at5-29-41AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 31%] [33mimages/260710_DG3913_image06_composite.png[39;49;00m             [01mcopying images... [39;49;00m[ 36%] [33mimages/Screenshot2026-06-21at9-01-36AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 42%] [33mimages/Screenshot2026-06-21at4-14-44PM.png[39;49;00m             [01mcopying images... [39;49;00m[ 47%] [33mimages/Screenshot2026-06-21at4-18-48PM.png[39;49;00m             [01mcopying images... [39;49;00m[ 52%] [33mimages/Screenshot2026-06-21at4-24-24PM.png[39;49;00m             [01mcopying images... [39;49;00m[ 57%] [33mimages/Screenshot2026-06-22at5-31-44AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 63%] [33mimages/Screenshot2026-06-22at5-32-00AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 68%] [33mimages/Screenshot2026-06-22at5-33-31AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 73%] [33mimages/Screenshot2026-06-22at5-43-33AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 78%] [33mimages/Screenshot2026-06-22at6-34-44AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 84%] [33mimages/Screenshot2026-06-22at6-47-22AM.png[39;49;00m             [01mcopying images... [39;49;00m[ 89%] [33mimages/Screenshot2026-06-17at2.05.37PM.png[39;49;00m             [01mcopying images... [39;49;00m[ 94%] [33mimages/Screenshot2026-06-17at2.30.02PM.png[39;49;00m             [01mcopying images... [39;49;00m[100%] [33mimages/Screenshot2026-06-17at3.47.32PM.png[39;49;00m             
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[etoc] missing index.html written as redirect to 'intro.html'
+[01mbuild succeeded, 8 warnings.[39;49;00m
+
+The HTML pages are in smFISH2026/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    smFISH2026/_build/html/
+You can look at your book by opening this file in a browser:
+    smFISH2026/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///Users/erin/Library/CloudStorage/Dropbox/github/smFISH2026/smFISH2026/_build/html/index.html            
+
+[92m===============================================================================[0m
+

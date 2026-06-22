@@ -53,7 +53,8 @@ As a demonstration of smFISH spot detection, we will use 8x image files. These i
 
 - [Starting a computational project](start.md)
 - [Welcome to FIJI](fijiIntro.md)
-- [Extending FIJI With Plugins and Macros](pluginMacros.md) 
+- [Extending FIJI with Plugins](plugins.md) 
+- [Automating FIJI with Macros](macros.md) 
 - [Alternatives to FIJI: Big-FISH and wormLib](alternatives.md)
 - [Final Thoughts and Resources](resources.md)
 

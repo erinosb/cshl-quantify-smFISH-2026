@@ -2,14 +2,19 @@
 
 ## References and Resources
 
-  * [About ImageJ](https://imagej.net/learn/) - this is 
+  * [About ImageJ](https://imagej.net/learn/)
   * [image.sc Forum](https://forum.image.sc/) - this is a user-friendly help forum.
+
+
+====
 
 ## What is FIJI?
 
 FIJI (FIJI is Just Image J) is a version of the open source software ImageJ (and ImageJ2) that is distributed complete with a collection of user-generated Plugins.
 
 Additional Plugins can be created by the community and installed as needed.
+
+====
 
 ## Brief Overview of FIJI
 
@@ -32,8 +37,6 @@ Additional Plugins can be created by the community and installed as needed.
 :width: 80 %
 :align: center
 ```
-
-
 
 ### Let's open a file
 
@@ -58,7 +61,6 @@ Additional Plugins can be created by the community and installed as needed.
   * Slide the **C** and **Z** sliders to explore the image
 
 ### Let's adjust the brightness
-
 
 ```{Note}
 Adjusting the brightness will not alter the underlying information within your file. It will change the way the image is displayed on your screen.
@@ -89,8 +91,9 @@ Set - Synchronizes the brightness and contrast among multiple open images with t
 
 ```
 
-## Optional Content
+====
 
+## Optional Content
 
 Watch this brief demonstration of some basic FIJI capabilities
 
@@ -108,7 +111,7 @@ Final product:
 
 ```{image} images/260710_DG3913_image06_composite.png
 :alt: A multi-color picture of a C. elegans embryo
-:width: 80 %
+:width: 60 %
 :align: center
 ```
 
