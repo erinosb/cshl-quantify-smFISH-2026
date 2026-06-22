@@ -210,7 +210,51 @@ Click along with me...
   * Click `OK`
   * Click `OK`
 
+The _lin-41_ mRNA has a different pattern than _set-3_. Instead of being homogenously distributed, it arranges into clusters. Use `Show All` to explore how well RS-FISH captured mRNAs found in clusters.
 
+  * Save the results files here, too:
+    * Save the file in the sub-directory 03_fiji_analysis with a name that makes sense like `260710_lin-41_ch2_C2_230505_DG3913_06_smFISHlocalizations.csv`
+    * Save the relevant portion of the logfile into a text editor. Save this also to the 03_fiji_analysis subdirectory
+
+
+## 4. Let's filter spots using binary mask(s)
+
+Sometimes, you want to restrict the mRNA spot counting to a small portion of the image. This may be important if there is debris in the prep or multiple embryos in one image. 
+
+To do this, we will make a mask, a black-and-white outline of the region we want to quantify versus the region we want to ignore. There are many ways to make a mask. Let's walk through two possible options for this process.
+
+We can use any of the channels to create the mask. For this process, let's go ahead and select Channel 3 to make the mask because it is very obvious where the outline of the embryo is. 
+
+First, let's duplicate Channel 3. Click along...
+
+  * Under the `Window` Menu, select the `C3` Channel image
+  * To duplicate, go to `Image` -> `Duplicate...`
+  * Name the new image `C3-230505_DG3913_06_R3D_mask1.dv`
+  * Click to select `Duplicate stack` 
+  * Click `OK`
+  * Repeat to create `C3-230505_DG3913_06_R3D_mask2.dv`
+
+For Option 1, we will use an automated approach to create a dynamic, 3D mask. For Option 2, we will hand draw a boundary that will be constant through all z-stacks.
+
+### Option 1 - automated, 3D binary mask
+
+  * Select the image `C3-230505_DG3913_06_R3D_mask1.dv`
+  * Slide through the Z axis until you are in a middle slice.
+  * Select `Process` -> `Make Binary`
+  * Select the following options...
+
+```{image} images/Screenshot2026-06-22at6-34-44AM.png
+:alt: Screenshot of RS-FISH mask - red
+:width: 60 %
+:align: center
+```
+
+  * Press `OK`
+  * The red area will convert to white. Slide through the Z-stacks to see how the mask changes with each slice.
+  * To save the mask, go to `File` -> `Save As` -> `Tiff...`
+  * Save in a masks sub-directory.
+
+### Option 1 - hand-drawn, 2D mask
 
 
 
