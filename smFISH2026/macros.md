@@ -5,6 +5,8 @@
   * [FIJI Macros](https://imagej.net/scripting/macro)
   * [IJM Language Programmer's Reference Guide](https://imagej.net/ij/docs/macro_reference_guide.pdf)
 
+---
+
 ## What are macros?
 
 Recall back to the start of this tutorial. I asked you to start the macro recorder. Let's return to this window (if yours is still open) and see what is there.
@@ -23,7 +25,9 @@ A few characteristics that set it apart:
 
 ```javascript
 
+////////////////////////////////////////////////
 // Two forward slashes are comments
+////////////////////////////////////////////////
 
 // Variables are specified with equals sign (=) and statements end in a semi-colon (;)
 factor = 1024; 
@@ -40,7 +44,9 @@ function closeImageByTitle(title) {
         close();
 }
 
+////////////////////////////////////////////////
 // Flow control works like many other languages
+////////////////////////////////////////////////
 
 // if/else if/else flow control
 if (is("binary")) {
@@ -59,3 +65,7 @@ for (image = 1; image <= imageCount; image++) {
 // while and do loops are also possible
 
 ```
+
+Yes, IJM is a language, but let's be honest, users don't usually just sit down and compose a FIJI macro like you would write an e-mail to a friend. Instead, most macros start out as macro recordings. Or, developers write snippets that users can then modify, or hack, for their purposes.
+
+
