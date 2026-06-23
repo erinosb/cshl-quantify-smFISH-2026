@@ -47,12 +47,12 @@ Additional Plugins can be created by the community and installed as needed.
 ### Let's open a file
 
   * In your finder or explorer, locate the following file:
-    * `~/260610_quantify_smFISH/01_raw_images/Spike_Fig6/230505_DG3913_06_R3D.dv`
-    * a strain containing a wild-type _lin-41_ construct and full _lin-41_ 3'UTR
+    * `~/260610_quantify_smFISH/01_raw_images/Spike_Fig6/230726_DG3913_19_R3D.dv`
+    * This strain has full-length _lin-41_ 3'UTR
   * Drag and drop the file into the status bar to open
   * Click `OK`
 
-```{image} images/Screenshot2026-06-19at5.25.43AM.png
+```{image} images/Screenshot2026-06-23at6-03-03AM.png
 :alt: Screenshot of a FIJI
 :width: 80 %
 :align: center
@@ -111,11 +111,12 @@ Watch this brief demonstration of some basic FIJI capabilities
   6. ` Image -> Crop ` to crop your image
   7. ` Analyze -> Set Scale ` to set the scale of your pixels per microns
   8. ` Analyze -> Tools -> Scale Bar ... ` to add a 10 micron scale bar. Make sure to click "Hide text"
+  0. `File -> Save As -> Tiff...` to save
 
 Final product:
 
 
-```{image} images/260710_DG3913_image06_composite.png
+```{image} images/260623_Merge_MAX_230726_DG3913_19_R3D.png
 :alt: A multi-color picture of a C. elegans embryo
 :width: 60 %
 :align: center
