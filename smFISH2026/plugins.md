@@ -111,12 +111,7 @@ Click along with me...
   * Set levels. Select `Plugins -> RS-FISH -> RS-FISH`
   * Select the Z-projected Channel 1 Image. Image: `MAX-C1-230726_DG3913_19_R3D.dv`. Set the values below:
     * Mode: `Interactive`
-    * Anisotropy Coefficient: This should be your calculated coefficient. Double-check it.
-    * Robust Fitting: RANSAC
-    * Compute Max/Min intnsity from image: check
-    * Use anisotropy coefficient for DoG: check
-    * Spot Intensity: Linear Interpolation
-    * Add Detections to ROI-Manager: check
+    * Click the box to `Add Detections to ROI-Manager`
 
 ```{image} images/Screenshot2026-06-23at6-38-41AM.png
 :alt: Screenshot of RS-FISH settings
@@ -152,6 +147,8 @@ Some low-intensity spots are not real. You can remove them if you like.
 :align: center
 ```
 
+  * Click on **OK - press to proceed to final results**
+
 ### 3. Let's detect and count mRNA spots
 
 We will count spots in both Channel 1 (_set-3_ mRNA control) and Channel 2 (_lin-41_ mRNA querry). Make sure you have both of these single-channel multi-stack files **C1-230505_DG3913_06_R3D.dv** and **C2-230505_DG3913_06_R3D.dv**. 
@@ -163,7 +160,7 @@ Click along with me...
   * This time, select Mode: `Advanced`. This will auto-propagate the settings you defined in the last exercise.
   * My screen looks like this: 
 
-```{image} images/Screenshot2026-06-23at8-48-04AM.png.
+```{image} images/Screenshot2026-06-23at8-48-04AM.png
 :alt: Screenshot of RS-FISH settings
 :width: 50 %
 :align: center
