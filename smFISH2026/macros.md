@@ -119,7 +119,7 @@ Explore the output
 
 | Conditions | mRNA surveyed | mRNA detections |
 | --- | --- | --- |
-| full-length lin-41 3'UTR  | lin-41 | 1, 457, 414, 158 |
+| full-length lin-41 3'UTR  | lin-41 | 691, 457, 414, 158 |
 | Fox-deletion in lin-41 3'UTR | lin-41 | 3690, 3690, 2396, 1718 | 
 | full-length lin-41 3'UTR  | set-3 | 693, 987, 1162, 1018 |
 | Fox-deletion in lin-41 3'UTR | set-3 | 652, 455, 661, 741 | 
