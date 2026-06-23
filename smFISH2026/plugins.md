@@ -146,7 +146,7 @@ Some low-intensity spots are not real. You can remove them if you like.
   * You will see some spots disappear. 
   * Make some choices - which do you think look real?
 
-```{image} images/Screenshot2026-06-21at4-24-24PM.png
+```{image} images/Screenshot2026-06-23at8-47-30AM.png
 :alt: Screenshot of RS-FISH options
 :width: 80 %
 :align: center
@@ -158,12 +158,12 @@ We will count spots in both Channel 1 (_set-3_ mRNA control) and Channel 2 (_lin
 
 Click along with me...
 
-  * Select `Plugins` -> `RS-FISH` -> `RS-FISH`
-  * Select Image: `C1-230505_DG3913_06_R3D.dv`
+  * Select `Plugins -> RS-FISH -> RS-FISH`
+  * Select Image: `C1-230726_DG3913_19_R3D.dv`
   * This time, select Mode: `Advanced`. This will auto-propagate the settings you defined in the last exercise.
   * My screen looks like this: 
 
-```{image} images/Screenshot2026-06-22at5-31-44AM.png
+```{image} images/Screenshot2026-06-23at8-48-04AM.png.
 :alt: Screenshot of RS-FISH settings
 :width: 50 %
 :align: center
@@ -172,7 +172,7 @@ Click along with me...
   * Click `OK`
   * Advanced Settings Window. You shouldn't need to change or click anything. Just in case this is helpful, my screen looks like this...
 
-```{image} images/Screenshot2026-06-22at5-32-00AM.png
+```{image} images/Screenshot2026-06-23at8-48-10AM.png
 :alt: Screenshot of RS-FISH Advanced Settings
 :width: 50 %
 :align: center
@@ -183,8 +183,9 @@ Click along with me...
 #### Assess the results
 
   * We now have an **ROI Manager** (Region of Interest), a **Results List**, information in the **Log**, and our original .dv file. 
-  * In the ROI Manager, click on `Show All`. 
-  * Slide through the Z axis of the image file to explore what was counted as a spot.
+  * Check the number of spots detected in the **Log** file
+  * In the ROI Manager, click on `Show All`
+  * Slide through the Z axis of the image file to explore what was counted as a spot
 
 ```{image} images/Screenshot2026-06-22at5-33-31AM.png
 :alt: Screenshot of RS-FISH Results
@@ -196,19 +197,21 @@ Click along with me...
 
   * Save the Results list. This can be a little tricky. Click on the results list until the menu options change to only a list of four menus, like so:
 
-```{image} images/Screenshot2026-06-22at5-43-33AM.png
+```{image} images/Screenshot2026-06-23at8-54-28AM.png
 :alt: Screenshot of RS-FISH menus
 :width: 20 %
 :align: center
 ```
 
-  * Save the file in the sub-directory 03_fiji_analysis with a name that makes sense like `260710_set-3_ch1_C1_230505_DG3913_06_smFISHlocalizations.csv`
+  * Save the file in the sub-directory 03_fiji_analysis with a name that makes sense like `260710_ch1_set3_C1-230726_DG3913_19_smFISH_localizations.csv`
   * Save the relevant portion of the logfile into a text editor. Save this also to the 03_fiji_analysis subdirectory
 
 #### Repeat for Channel 2
 
-  * Select `Plugins` -> `RS-FISH` -> `RS-FISH`
-  * This time, select Image: `C2-230505_DG3913_06_R3D.dv`
+Do the same for Channel 2, the _lin-41_ mRNA channel:
+
+  * Select `Plugins -> RS-FISH -> RS-FISH`
+  * This time, select Image: `C2-230726_DG3913_19_R3D.dv`
   * Mode: `Advanced`
   * Click `OK`
   * Click `OK`
@@ -216,7 +219,7 @@ Click along with me...
 The _lin-41_ mRNA has a different pattern than _set-3_. Instead of being homogenously distributed, it arranges into clusters. Use `Show All` to explore how well RS-FISH captured mRNAs found in clusters.
 
   * Save the results files here, too:
-    * Save the file in the sub-directory 03_fiji_analysis with a name that makes sense like `260710_lin-41_ch2_C2_230505_DG3913_06_smFISHlocalizations.csv`
+    * Save the file in the sub-directory 03_fiji_analysis with a name that makes sense like `260710_ch2_lin-41_C2_230726_DG3913_19_smFISH_localizations.csv`
     * Save the relevant portion of the logfile into a text editor. Save this also to the 03_fiji_analysis subdirectory
 
 
