@@ -21,10 +21,7 @@ Macros are ordered sequences of text-based commands that FIJI can implement in l
 
 A few characteristics that set it apart:
 
-```
-
-
-```
+```javascript
 
 // Two forward slashes are comments
 
