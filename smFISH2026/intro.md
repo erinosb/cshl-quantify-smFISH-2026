@@ -62,7 +62,7 @@ To test how _lin-41_ mRNA decay is regulated, we conducted a 3'UTR deletion anal
 :align: center
 ```
 
-Today, we will focus on these two strains used in the study as a demonstration:
+Today, we will focus on two strains as a demonstration:
 
 | Strain | Deletion | Description | Phenotype |
 | --- | --- | --- | --- |

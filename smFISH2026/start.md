@@ -7,19 +7,12 @@ Welcome! Let's start a computational project to analyze smFISH data.
 
 You will create a directory/folder on your local computer where we will conduct an smFISH quantification project. It is very important to have an intentional folder hierarchy for computational projects. This ensure that you can separate raw data, processed data, scripts, and final output. Follow along:
 
-   -  Create a new **directory** in a location on your local computer where you conduct projects. Name it `smFISH-quantify`.
-   - Navigate inside `smFISH-quantify` and create the following new **sub-directories**:
-     - `01_rawfiles`
-     - `02_channel2_rawfiles`
-     - `03_FIJI_processing`
-     - `04_myscripts`
-     - `05_output`
+   -  Let's obtain the course content within a directory called `260710_quantify_smFISH`
+   - Navigate inside `260710_quantify_smFISH` and explore the following new **sub-directories**:
 
-   - If you did this correctly, your file structure should look like this:
-
-```{image} images/Screenshot2026-06-17at2.05.37PM.png
+```{image} images//Users/erin/Desktop/Screenshot2026-06-23at5-32-40AM.png
 :alt: Screenshot of a Finder directory
-:width: 80 %
+:width: 20 %
 :align: center
 ```
 
@@ -61,9 +54,9 @@ It is very important to keep track of the steps you take in a computational proj
 
 If your directory structure and README.txt file look like what is pictured below, you are all set! 
 
-```{image} images/Screenshot2026-06-17at3.47.32PM.png
+```{image} images/Screenshot2026-06-23at5-39-41AM.png
 :alt: Complete directory example
-:width: 80 %
+:width: 20 %
 :align: center
 ```
 
