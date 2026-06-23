@@ -20,11 +20,11 @@ Please try to install the listed software on your laptop before this session. If
 
 | Time | Topic | Outline |
 | --- | --- | --- |
-| ~15 min | smFISH best practices | an overview of smFISH probe design, hybridization, image capture, and common pitfalls |
-| ~15 min | image file types and project organization | a survey of common microscopy file formats (.nd2, .tif, .dv); best practices in setting up a project folder; writing a README file |
-| ~30 min | FIJI mRNA spot detection | practicum on FIJI; recording, writing, running, and interacting with FIJI macros; mRNA spot detection in FIJI | 
-| ~15 min | big-fish mRNA spot detection | optional installation of big-fish; demonstration of mRNA spot detection using big-fish | 
-| ~15 min | options for downstream analysis | quick suggestions for downstream applications such as blastomere identification, marker co-localization, plotting, and high-performance computing | 
+| ~15 min | intro to computational projects | introduction, best practices, and common pitfalls |
+| ~20 min | intro to FIJI | Navigating the software, a tour of basic functions |
+| ~30 min | extending FIJI with plugins | practicum on mRNA spot detection in FIJI using the RS-FISH plugin | 
+| ~15 min | automating FIJI with macros | practicum on batch processing images in FIJI using macros | 
+| ~10 min | alternatives to FIJI | bonus content on big-fish and wormLib | 
 
 
 ## Learning Objectives 
@@ -33,20 +33,20 @@ By the end of this activity, students will be able to:
 
   - Learn best practices for conducting a computational analysis project
   - Use FIJI to open image files and explore their basic features
+  - Load FIJI Plugins
   - Use RS-FISH quantify perform smFISH mRNA spot detection on _C. elegans_ embryo image files
   - Use FIJI macros to automate basic FIJI workflows
-  - Understand alternative methods such as fish-quant v2 (Big-FISH) and wormLib
-  - Envision how big-fish and wormLib could be used for a wide array of downstream applications such as embryo identification and co-localization.
+  - Have awareness of alternative methods such as fish-quant v2 (Big-FISH) and wormLib
 
 ## Expected Results
 
-At the end of this session, students will have hands-on experience working with image files in FIJI. Students will have FIJI and the RS-FISH package installed on their local computers. Students will have generated output files that tabulate the number of mRNA spots detected in each input image file by RS-FISH (implemented in FIJI). Key parameters and logfiles will also be saved. Demonstration scripts will be included to show how the output information can be plotted.
+At the end of this session, students will have hands-on experience working with image files in FIJI. Students will have FIJI and the RS-FISH plugin installed on their local computers. Students will have generated output files that tabulate the number of mRNA spots detected in each input image file by RS-FISH (implemented in FIJI). Key parameters and logfiles will also be saved. Demonstration scripts will be included to show how the output information can be plotted.
 
-A demonstration of fish-quant v2 (Big-FISH) and wormLib will provide a more observational experience for students to illustrate how the different mRNA spot detection approaches compare in their implementation, complexity, and effectiveness.
+Bonus content on fish-quant v2 (Big-FISH) and wormLib will provided to illustrate how the different mRNA spot detection approaches compare in their implementation, complexity, and effectiveness.
 
 ## Demo Dataset
 
-As a demonstration of smFISH spot detection, we will use 8x image files. These images were captured from 
+As a demonstration of smFISH spot detection, we will use 8x image files. These images were captured from Spike et al., Development, 2026. 
 
 
 ## Activities

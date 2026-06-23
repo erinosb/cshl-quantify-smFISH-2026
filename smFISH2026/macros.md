@@ -13,7 +13,7 @@ Recall back to the start of this tutorial. I asked you to start the macro record
 
 ```{image} images/Screenshot2026-06-22at6-21-47PM.png
 :alt: Screenshot of FIJI macro recorder
-:width: 50 %
+:width: 80 %
 :align: center
 ```
 
@@ -66,6 +66,12 @@ for (image = 1; image <= imageCount; image++) {
 
 ```
 
+For more information, see the references at the top of this page. 
+
+Overall, if you are used to writing in linux/bash, python, R, javascript, or java, this should be an easy learning curve. If you don't yet code - just start! Starting with any coding language will make the next languages easier as most of the concepts (variables, flow control, loops, and functions) will all be the same. 
+
 Yes, IJM is a language, but let's be honest, users don't usually just sit down and compose a FIJI macro like you would write an e-mail to a friend. Instead, most macros start out as macro recordings. Or, developers write snippets that users can then modify, or hack, for their purposes.
+
+Indeed, RS-FISH comes with an [example macro](https://github.com/PreibischLab/RS-FISH/blob/master/documents/example_scripts/rs_macro.ijm).
 
 
