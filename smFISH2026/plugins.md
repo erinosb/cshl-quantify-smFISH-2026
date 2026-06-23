@@ -187,7 +187,7 @@ Click along with me...
   * In the ROI Manager, click on `Show All`
   * Slide through the Z axis of the image file to explore what was counted as a spot
 
-```{image} images/Screenshot2026-06-22at5-33-31AM.png
+```{image} images/Screenshot2026-06-23at8-54-28AM.png
 :alt: Screenshot of RS-FISH Results
 :width: 100 %
 :align: center
@@ -197,7 +197,7 @@ Click along with me...
 
   * Save the Results list. This can be a little tricky. Click on the results list until the menu options change to only a list of four menus, like so:
 
-```{image} images/Screenshot2026-06-23at8-54-28AM.png
+```{image} images/Screenshot2026-06-22at5-43-33AM.png
 :alt: Screenshot of RS-FISH menus
 :width: 20 %
 :align: center
