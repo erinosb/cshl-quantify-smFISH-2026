@@ -86,16 +86,15 @@ Click along with me...
 
   * **Start Macro Recording**. FIJI will record all your clicks, settings, and toggles by recording them. This will convert pushing and clicking into text commands. This will be helpful later as you start to write your own macros.
     * Select the `Plugins` Menu -> `Macros` -> `Record`
-  * Open `230505_DG3913_06_R3D.dv` if it is not open already. (hint - drat & drop into the status bar)
-  * Select `Image` -> `Color` -> `Split Channels` to split the image into separate channels as RS-FISH can only work on one channel at a time.
-  * Select `Plugins` -> `RS-FISH` -> `Tools` -> `Calculate Anisotropy Coefficient`.
-  *  Select Image: `C1-230505_DG3913_06_R3D.dv` from the pull down menu. Select Detection Mode; `Gauss Fit`
+  * Open `230726_DG3913_19_R3D.dv` if it is not open already. (hint - drat & drop into the status bar)
+  * Select `Image -> Color -> Split Channels` to split the image into separate channels as RS-FISH can only work on one channel at a time.
+  * Select `Plugins -> RS-FISH -> Tools -> Calculate Anisotropy Coefficient`.
+  *  Select Image: `C1-230726_DG3913_19_R3D.dv` from the pull down menu. Select Detection Mode; `Gauss Fit`
   * Move the rectangle to a place within the embryo that has spots. Use the default Sigma and Threshold values (these typically look pretty good). 
     * You can adjust Sigma to account for larger or smaller spots or Threshold to account for darker or lighter contrast
     * For now, let's just use the defaults. Sigma: `1.50`. Threshold: `0.0050`
   * Select `Done`
-  * You will receive a Anisotropy Coefficient. Write it down or export/save it (your README file is a good place).
-
+  * You will receive a Anisotropy Coefficient. Write it down or export/save it (your README file is a good place). (Mine was around 0.6288)
 
 ### 2. Let's determine the optimal settings
 
@@ -104,13 +103,13 @@ Click along with me...
 Click along with me...
 
   * Close out all extra windows and panels
-  * Drag and drop `230505_DG3913_06_R3D.dv` into the status bar to open
-  * Split out channels. Select `Image` -> `Color` -> `Split Channels`
-  * Select Channel 1. Select `Window` -> `C1-230505_DG3913_06_R3D.dv`
-  * Z-Projection. Select `Image` -> `Stacks` -> `Z-Project`
-  * Select start slice (1) and stop slice (51) and Projection Type: `Max Intensity`
-  * Set levels. Select `Plugins` -> `RS-FISH` -> `RS-FISH`
-  * Select the Z-projected Channel 1 Image. Image: `MAX-C1-230505_DG3913_06_R3D.dv`. Set the values below:
+  * Drag and drop `230726_DG3913_19_R3D.dv` into the status bar to open
+  * Split out channels. Select `Image -> Color -> Split Channels`
+  * Select Channel 1. Select `Window -> C1-230726_DG3913_19_R3D.dv`
+  * Z-Projection. Select `Image -> Stacks -> Z-Project`
+  * Select start slice (1) and stop slice (61) and Projection Type: `Max Intensity`
+  * Set levels. Select `Plugins -> RS-FISH -> RS-FISH`
+  * Select the Z-projected Channel 1 Image. Image: `MAX-C1-230726_DG3913_19_R3D.dv`. Set the values below:
     * Mode: `Interactive`
     * Anisotropy Coefficient: This should be your calculated coefficient. Double-check it.
     * Robust Fitting: RANSAC
@@ -119,7 +118,7 @@ Click along with me...
     * Spot Intensity: Linear Interpolation
     * Add Detections to ROI-Manager: check
 
-```{image} images/Screenshot2026-06-21at4-14-44PM.png
+```{image} images/Screenshot2026-06-23at6-38-41AM.png
 :alt: Screenshot of RS-FISH settings
 :width: 50 %
 :align: center
@@ -132,7 +131,7 @@ Click along with me...
   * Make some choices - what looks real to you?
   * Press any `Done`
 
-```{image} images/Screenshot2026-06-21at4-18-48PM.png
+```{image} images/Screenshot2026-06-23at6-41-26AM.png
 :alt: Screenshot of RS-FISH options
 :width: 100 %
 :align: center
