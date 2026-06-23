@@ -76,6 +76,8 @@ RS-FISH uses Raidal Symmetry, Gaussians, and Outlier Removal for Improved mRNA S
   3. Detect and Count Spots
   4. Optionally - Filter spots using binary mask(s)
 
+---
+
 ## Let's detect spots with smFISH
 
 ### 1. Let's Calculate Anisotropy Coefficient
@@ -108,7 +110,7 @@ Click along with me...
   * Z-Projection. Select `Image` -> `Stacks` -> `Z-Project`
   * Select start slice (1) and stop slice (51) and Projection Type: `Max Intensity`
   * Set levels. Select `Plugins` -> `RS-FISH` -> `RS-FISH`
-  * Select the Channel 1 Image. Image: `C1-230505_DG3913_06_R3D.dv`. Set the values below:
+  * Select the Z-projected Channel 1 Image. Image: `MAX-C1-230505_DG3913_06_R3D.dv`. Set the values below:
     * Mode: `Interactive`
     * Anisotropy Coefficient: This should be your calculated coefficient. Double-check it.
     * Robust Fitting: RANSAC
@@ -277,15 +279,11 @@ For Option 1, we will use an automated approach to create a dynamic, 3D mask. Fo
 To use the mask, you must first run mRNA spot detection and then filter out un-masked spots.
 
   * Select `Plugins` -> `RS-FISH` -> `Tools` -> `Mask Filtering`
-  * 
+  * Select the directory containing your .csv output files
+  * Select one of your masks
+  * Select an output directory
+  * Push `OK`
 
-
-
-
-
-
-
-
-
+You should now have a directory with filtered .csv files
 
 
