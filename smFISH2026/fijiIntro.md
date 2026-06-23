@@ -8,6 +8,12 @@
 
 ---
 
+```{image} images/fiji.svg
+:alt: FIJI logo
+:width: 20 %
+:align: left
+```
+
 ## What is FIJI?
 
 FIJI (FIJI is Just Image J) is a version of the open source software ImageJ (and ImageJ2) that is distributed complete with a collection of user-generated Plugins.

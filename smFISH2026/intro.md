@@ -56,7 +56,7 @@ As a demonstration of smFISH spot detection, we will use 8x image files. These i
 
 To test how _lin-41_ mRNA decay is regulated, we conducted a 3'UTR deletion analysis on the _lin-41_ 3'UTR. As part of this study, we showed that a key Fox sequence motif in _lin-41_ mRNA's 3'UTR's is required for its decay and is recognized by the RNA Binding Protein SPN-4. Here is the mutational plan: 
 
-```{image} images/Screenshot2026-06-23at5-09-05 AM.png
+```{image} images/Screenshot2026-06-23at5-09-05AM.png
 :alt: slide of LIN-41 and SPN-4 expression
 :width: 80 %
 :align: center
