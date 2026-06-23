@@ -65,6 +65,7 @@ To test how _lin-41_ mRNA decay is regulated, we conducted a 3'UTR deletion anal
 Today, we will focus on these two strains used in the study as a demonstration:
 
 | Strain | Deletion | Description | Phenotype |
+| --- | --- | --- | --- |
 | DG3913 | no deletion | _gfp::lin-41::full-3'UTR_ | rapid decay, low _lin-41_ levels | 
 | DG5398 | medium Fox deletion (tn2078) | _gfp::lin-41::3'UTR-($\Delta$777-1045)_ | no decay, high _lin-41_ levels | 
 
