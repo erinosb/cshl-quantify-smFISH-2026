@@ -46,7 +46,31 @@ Bonus content on fish-quant v2 (Big-FISH) and wormLib will provided to illustrat
 
 ## Demo Dataset
 
-As a demonstration of smFISH spot detection, we will use 8x image files. These images were captured from Spike et al., Development, 2026. 
+As a demonstration of smFISH spot detection, we will use 8x image files. These images were captured in our recent study Spike et al., 2026. In this paper, we explored the _lin-41_ mRNA, a transcript that promotes oocyte maturation. LIN-41 protein and _lin-41_ mRNA undergo rapid decay after fertilization.  
+
+```{image} images/Screenshot2026-06-23at5-07-35AM.png
+:alt: slide of LIN-41 and SPN-4 expression
+:width: 80 %
+:align: center
+```
+
+To test how _lin-41_ mRNA decay is regulated, we conducted a 3'UTR deletion analysis on the _lin-41_ 3'UTR. As part of this study, we showed that a key Fox sequence motif in _lin-41_ mRNA's 3'UTR's is required for its decay and is recognized by the RNA Binding Protein SPN-4. Here is the mutational plan: 
+
+```{image} images/Screenshot2026-06-23at5-09-05 AM.png
+:alt: slide of LIN-41 and SPN-4 expression
+:width: 80 %
+:align: center
+```
+
+Today, we will focus on these two strains used in the study as a demonstration:
+
+| Strain | Deletion | Description | Phenotype |
+| DG3913 | no deletion | _gfp::lin-41::full-3'UTR_ | rapid decay, low _lin-41_ levels | 
+| DG5398 | medium Fox deletion (tn2078) | _gfp::lin-41::3'UTR-($\Delta$777-1045)_ | no decay, high _lin-41_ levels | 
+
+For more information, please see our manuscript:
+
+Spike CA, Parker DM, Tsukamoto T, Torres Mangual N, Tsukamoto EC, Coleman K, Gearhart MD, Greenstein D, Osborne Nishimura E. [The SPN-4 Rbfox RNA-binding protein selects maternal mRNAs for CCR4-NOT-dependent clearance in early _Caenorhabditis elegans_ embryos.](https://pubmed.ncbi.nlm.nih.gov/42226709/) Development. 2026 Jun 1;153(11):dev205295. doi: 10.1242/dev.205295. Epub 2026 Jun 4. PMID: 42226709.
 
 
 ## Activities
