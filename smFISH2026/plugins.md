@@ -25,6 +25,8 @@ In general, Plugins are divided into four categories:
 
 Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be installed through `Upate ...`
 
+---
+
 ## Let's Download and Install RS-FISH
 
   * Go to `Help -> Update ... `

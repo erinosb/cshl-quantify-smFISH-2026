@@ -6,7 +6,7 @@
   * [image.sc Forum](https://forum.image.sc/) - this is a user-friendly help forum.
 
 
-====
+---
 
 ## What is FIJI?
 
@@ -14,7 +14,7 @@ FIJI (FIJI is Just Image J) is a version of the open source software ImageJ (and
 
 Additional Plugins can be created by the community and installed as needed.
 
-====
+---
 
 ## Brief Overview of FIJI
 
@@ -91,7 +91,7 @@ Set - Synchronizes the brightness and contrast among multiple open images with t
 
 ```
 
-====
+---
 
 ## Optional Content
 
