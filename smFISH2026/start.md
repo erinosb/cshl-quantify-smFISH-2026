@@ -10,9 +10,9 @@ You will create a directory/folder on your local computer where we will conduct 
    -  Let's obtain the course content within a directory called `260710_quantify_smFISH`
    - Navigate inside `260710_quantify_smFISH` and explore the following new **sub-directories**:
 
-```{image} images//Users/erin/Desktop/Screenshot2026-06-23at5-32-40AM.png
+```{image} images/Screenshot2026-06-23at5-32-40AM.png
 :alt: Screenshot of a Finder directory
-:width: 20 %
+:width: 40 %
 :align: center
 ```
 
@@ -56,7 +56,7 @@ If your directory structure and README.txt file look like what is pictured below
 
 ```{image} images/Screenshot2026-06-23at5-39-41AM.png
 :alt: Complete directory example
-:width: 20 %
+:width: 40 %
 :align: center
 ```
 
