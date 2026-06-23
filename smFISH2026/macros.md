@@ -74,4 +74,32 @@ Yes, IJM is a language, but let's be honest, users don't usually just sit down a
 
 Indeed, RS-FISH comes with an [example macro](https://github.com/PreibischLab/RS-FISH/blob/master/documents/example_scripts/rs_macro.ijm).
 
+---
+
+## Let's explore a simple macro
+
+Let's open a macro that I have written for you...
+
+  * Go to `Plugins -> Macros -> Edit ... `
+  * Select the script `~/260710_quantify_smFISH/02_scripts/split_smFISH_channels.ijm`
+  * Click `Open`
+
+Notice how comments separate the macro into sections.
+
+  * **Header** this section is titled **Select Your Parameters**. It contains code that the user is expected to alter.
+  * The header also includes some description of how the user can hack the code
+  * Section below the header is the macro script itself and has the commands and instructions
+  * Notice how comments within the code help to explain each step
+  * Notice that there is a **for** loop that will iterate the same commands over every file in a directory.
+
+We will not run this macro, but if we did, we would simply change the header content, change any lines of the code we wanted to customize, and then press `Run`. 
+
+Instead, I have already run this code for you. It splits each .dv file into a C1 (channel 1) stack and a C2 (channel 2) stack. These are located in `~/260710_quantify_smFISH/04_fiji_batch_analysis/01_single_channel_input`
+
+  * Explore these files
+
+---
+
+## Let's run the RS-FISH macro
+
 

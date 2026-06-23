@@ -23,7 +23,7 @@ In general, Plugins are divided into four categories:
   3. Plugings that can be installed through `Update ... `
   4. Plugins that must be manually installed
 
-Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be installed through `Upate ...`
+Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be installed through `Update ...`
 
 ---
 
@@ -277,7 +277,7 @@ For Option 1, we will use an automated approach to create a dynamic, 3D mask. Fo
 
 To use the mask, you must first run mRNA spot detection and then filter out un-masked spots.
 
-  * Select `Plugins -> RS-FISH -> Tools -> `Mask Filtering`
+  * Select `Plugins -> RS-FISH -> Tools -> Mask Filtering`
   * Select the directory containing your .csv output files
   * Select one of your masks
   * Select an output directory
