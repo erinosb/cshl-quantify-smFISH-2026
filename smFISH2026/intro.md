@@ -2,13 +2,13 @@
 
 Welcome to the `cshl-quantify-smFISH-2026` book.
 
-We will explore two ways of counting mRNA molecules from smFISH microscopy images. In the first example, we will use FIJI and FIJI macros that require only modest coding skills. In the second example, we will use `big-fish` and `wormlib` that require greater coding but also allow for greater extensibility, performance, and speed.
+We will explore FIJI, an open source resource for exploring and quantifying images. We will use RS-FISH, a user-contributed FIJI Plugin that extends FIJI's basic function to quantify the number of smFISH mRNA spots in an image. We will use FIJI macros to automate the spot detection process across a series of images. Finally, I will explain how command line tools like `Big-FISH` and `wormlib` compare. 
 
 Images of _C. elegans_ early embryos will be used as input. Tables of mRNA spot counts will be captured as output. Tables can be used to plot mRNA abundance, mRNA co-localization in relation to other markers, or clustering.
 
 ## Required Software
 
-Please try to install the listed software on your laptop before this session. If you have questions, we can install the software together.
+Please try to install FIJI on your laptop before this session. 
 
   * **FIJI** – please install FIJI from [FIJI](https://imagej.net/software/fiji/downloads)
     * Choose from “Latest downloads”
