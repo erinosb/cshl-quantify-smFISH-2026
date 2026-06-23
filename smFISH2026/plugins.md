@@ -234,24 +234,24 @@ We can use any of the channels to create the mask. For this process, let's go ah
 First, let's duplicate Channel 3. Click along...
 
   * Under the `Window` Menu, select the `C3` Channel image
-  * To duplicate, go to `Image` -> `Duplicate...`
-  * Name the new image `C3-230505_DG3913_06_R3D_mask1.dv`
+  * To duplicate, go to `Image -> Duplicate...`
+  * Name the new image `C3_230726_DG3913_19_R3D_mask1.dv`
   * Click to select `Duplicate stack` 
   * Click `OK`
-  * Repeat to create `C3-230505_DG3913_06_R3D_mask2.dv`
+  * Repeat to create `C3_230726_DG3913_19_R3D_mask2.dv`
 
 For Option 1, we will use an automated approach to create a dynamic, 3D mask. For Option 2, we will hand draw a boundary that will be constant through all z-stacks.
 
 ### Option 1 - automated, 3D binary mask
 
-  * Select the image `C3-230505_DG3913_06_R3D_mask1.dv`
+  * Select the image `C3_230726_DG3913_19_R3D_mask1.dv`
   * Slide through the Z axis until you are in a middle slice.
-  * Select `Process` -> `Make Binary`
+  * Select `Process -> Make Binary`
   * Select the following options...
 
-```{image} images/Screenshot2026-06-22at6-34-44AM.png
+```{image} images/Screenshot2026-06-23at9-11-59AM.png
 :alt: Screenshot of RS-FISH mask - red
-:width: 60 %
+:width: 100 %
 :align: center
 ```
 
@@ -262,17 +262,17 @@ For Option 1, we will use an automated approach to create a dynamic, 3D mask. Fo
 
 ### Option 2 - hand-drawn, 2D mask
 
-  * Select the image `C3-230505_DG3913_06_R3D_mask2.dv`
+  * Select the image `C3_230726_DG3913_19_R3D_mask2.dv`
   * From the toolbar, select the `Polygon` tool
   * Draw an outline around the embryo with the polygon tool. Be sure to connect the starting and ending nodes together to create a shape. It should look like this...
 
-```{image} images/Screenshot2026-06-22at6-47-22AM.png
+```{image} images/Screenshot2026-06-23at9-12-35AM.png
 :alt: Screenshot of RS-FISH polygone
-:width: 60 %
+:width: 100 %
 :align: center
 ```
 
-  * To make the mask, selct `Edit` -> `Selection` -> `Create Mask`
+  * To make the mask, selct `Edit -> Selection -> Create Mask`
   * This will create a new 2D image file. 
   * Save it in your same masks, sub-directory.
 
@@ -280,7 +280,7 @@ For Option 1, we will use an automated approach to create a dynamic, 3D mask. Fo
 
 To use the mask, you must first run mRNA spot detection and then filter out un-masked spots.
 
-  * Select `Plugins` -> `RS-FISH` -> `Tools` -> `Mask Filtering`
+  * Select `Plugins -> RS-FISH -> Tools -> `Mask Filtering`
   * Select the directory containing your .csv output files
   * Select one of your masks
   * Select an output directory
