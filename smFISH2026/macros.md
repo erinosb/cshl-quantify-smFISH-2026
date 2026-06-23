@@ -102,4 +102,26 @@ Instead, I have already run this code for you. It splits each .dv file into a C1
 
 ## Let's run the RS-FISH macro
 
+Now, let's run the RS-FISH macro. This will process all our images, both channels, in batch. 
+
+  * Go to `Plugins -> Macros -> Edit ... `
+  * Select the script `~/260710_quantify_smFISH/02_scripts/rs-macro.ijm`
+  * Click `Open`
+
+Let's customize this script for our own use
+
+  * Change the input and timestamp directories to reflect your own file structure
+  * Change any parameters to match your own parameters
+  * Now, all the samples will be run with the identical parameters.
+  * Click `Run`
+
+Explore the output
+
+| Conditions | mRNA surveyed | mRNA detections |
+| --- | --- | --- |
+| full-length lin-41 3'UTR  | lin-41 | 1, 457, 414, 158 |
+| Fox-deletion in lin-41 3'UTR | lin-41 | 3690, 3690, 2396, 1718 | 
+| full-length lin-41 3'UTR  | set-3 | 693, 987, 1162, 1018 |
+| Fox-deletion in lin-41 3'UTR | set-3 | 652, 455, 661, 741 | 
+
 
