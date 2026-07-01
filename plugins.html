@@ -1,0 +1,835 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Extending FIJI With Plugins &#8212; Quantifying smFISH 2026</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'plugins';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Automating FIJI with Macros" href="macros.html" />
+    <link rel="prev" title="Intro to FIJI" href="fijiIntro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/smFISH_square.png" class="logo__image only-light" alt="Quantifying smFISH 2026 - Home"/>
+    <script>document.write(`<img src="_static/smFISH_square.png" class="logo__image only-dark" alt="Quantifying smFISH 2026 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Quantifying smFISH, 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Starting a computational project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fijiIntro.html">Intro to FIJI</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Extending FIJI With Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macros.html">Automating FIJI with Macros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives.html">Alternatives to FIJI: Big-FISH and wormLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Final Thoughts and Resources</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/erinosb/cshl-smFISH-quantify-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/erinosb/cshl-smFISH-quantify-2026/issues/new?title=Issue%20on%20page%20%2Fplugins.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/plugins.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Extending FIJI With Plugins</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-resources">References and Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-plugins">About Plugins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-download-and-install-rs-fish">Let’s Download and Install RS-FISH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rs-fish-approach">The RS-FISH Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rs-fish-steps">The RS-FISH Steps:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-detect-spots-with-smfish">Let’s detect spots with smFISH</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-calculate-anisotropy-coefficient">1. Let’s Calculate Anisotropy Coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-determine-the-optimal-settings">2. Let’s determine the optimal settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#to-determine-the-optimal-settings-we-ll-use-a-z-projection-of-channel-1">To determine the optimal settings, we’ll use a Z-projection of Channel 1.**</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-intensity-threshold">Set the intensity threshold</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-detect-and-count-mrna-spots">3. Let’s detect and count mRNA spots</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assess-the-results">Assess the results</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-results">Save the results</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#repeat-for-channel-2">Repeat for Channel 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-filter-spots-using-binary-mask-s">4. Let’s filter spots using binary mask(s)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-automated-3d-binary-mask">Option 1 - automated, 3D binary mask</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-hand-drawn-2d-mask">Option 2 - hand-drawn, 2D mask</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-mrna-spot-detection-by-mask">Filter mRNA spot detection by mask</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="extending-fiji-with-plugins">
+<h1>Extending FIJI With Plugins<a class="headerlink" href="#extending-fiji-with-plugins" title="Permalink to this heading">#</a></h1>
+<section id="references-and-resources">
+<h2>References and Resources<a class="headerlink" href="#references-and-resources" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://imagej.net/list-of-extensions">ImageJ List of Extensions</a></p></li>
+<li><p><a class="reference external" href="https://imagej.net/plugins/">FIJI Plugin Tutorial</a></p></li>
+<li><p><a class="reference external" href="https://github.com/PreibischLab/RS-FISH/tree/master">RS-FISH Instructions and Github</a></p></li>
+<li><p>Bahry E, Breimann L, Zouinkhi M, Epstein L, Kolyvanov K, Mamrak N, King B, Long X, Harrington KIS, Lionnet T, Preibisch S. <a class="reference external" href="https://www.nature.com/articles/s41592-022-01669-y">RS-FISH: precise, interactive, fast, and scalable FISH spot detection.</a>. Nat Methods. 2022 Dec;19(12):1563-1567. Epub 2022 Nov 17. PMID: 36396787; PMCID: PMC9718671.</p></li>
+<li><p><a class="reference external" href="https://forum.image.sc/">image.sc Forum</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="about-plugins">
+<h2>About Plugins<a class="headerlink" href="#about-plugins" title="Permalink to this heading">#</a></h2>
+<p>ImageJ/FIJI is an example of a community-driven, open architecture software ecosystem. Unlike Microsoft that is developed by a company, sold for a price, and generates a profit, ImageJ/FIJI is distributed on an open format (written in JAVA), distributed for free, and depends on the users to extend its functionality. Community members and users can add to ImageJ and distribute their add-ons as Plugins (also called Extensions). These are analogous to Packages in R or Python.</p>
+<p>Let’s explore the <a class="reference external" href="https://imagej.net/list-of-extensions">ImageJ List of Plugins</a>.</p>
+<p>In general, Plugins are divided into four categories:</p>
+<ol class="arabic simple">
+<li><p>Plugins that come with ImageJ (the most basic download)</p></li>
+<li><p>Plugins that come with FIJI</p></li>
+<li><p>Plugings that can be installed through <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">...</span> </code></p></li>
+<li><p>Plugins that must be manually installed</p></li>
+</ol>
+<p>Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be installed through <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">...</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="let-s-download-and-install-rs-fish">
+<h2>Let’s Download and Install RS-FISH<a class="headerlink" href="#let-s-download-and-install-rs-fish" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Help</span> <span class="pre">-&gt;</span> <span class="pre">Update</span> <span class="pre">...</span> </code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Mange</span> <span class="pre">update</span> <span class="pre">sites</span></code></p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">radial</span> <span class="pre">symmetry</span></code> into the search bar</p></li>
+<li><p>Select the box to the left of <code class="docutils literal notranslate"><span class="pre">Radial</span> <span class="pre">Symmetry</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Apply</span> <span class="pre">and</span> <span class="pre">Close</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Apply</span> <span class="pre">Changes</span></code></p></li>
+<li><p>Restart FIJI</p></li>
+<li><p>Check your installation was successful. Go to the <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> Menu. You should now see the RS-FISH Plugin listed</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-21at9-01-36AM.png"><img alt="Screenshot of RS-FISH Plugin list" class="align-center" src="_images/Screenshot2026-06-21at9-01-36AM.png" style="width: 40%;" /></a>
+</section>
+<hr class="docutils" />
+<section id="the-rs-fish-approach">
+<h2>The RS-FISH Approach<a class="headerlink" href="#the-rs-fish-approach" title="Permalink to this heading">#</a></h2>
+<p>RS-FISH uses Raidal Symmetry, Gaussians, and Outlier Removal for Improved mRNA Spot Detection to tackle common issues that arise when detecting and counting puncta.</p>
+<p><strong>Common issues, questions, and decisions associated with spot detection:</strong></p>
+<ul class="simple">
+<li><p>Can we use a 3D image, or do we need to flatten it to 2D?</p></li>
+<li><p>How can we resolve spots that are close together? Clusters?</p></li>
+<li><p>The X and Y dimensions are captured at one resolution, the Z-dimension is captured at a different “resolution”.</p></li>
+<li><p>Out-of-focus light appears in many Z-stacks. How does this impact the algorithm?</p></li>
+<li><p>How do we deal with background?</p></li>
+<li><p>How do we deal with multiple regions of interest in an image?</p></li>
+<li><p>How will we process files in batch?</p></li>
+</ul>
+<p><strong>RS-FISH Answers</strong></p>
+<ul class="simple">
+<li><p>3D and 2D - ok</p></li>
+<li><p>The <strong>Detection of Gaussian</strong> algorithm is used to identify spots and resolve spots that are close together (also, working in 3D help).</p>
+<ul>
+<li><p><strong>RANSAC</strong> - This is SM-FISH’s Remove Outlier function. The ideas is to improve accuracy.</p></li>
+<li><p><strong>Multiconsensus RANSAC</strong> - This computationally intensive Remove Outlier function that can more accurately resolve densely arranged spots.</p></li>
+</ul>
+</li>
+<li><p><strong>Anisotropy Coefficient</strong> RS-FISH calculates this coefficient to account for the resolution differences between X, Y, and Z. This virtually corrects for the lower resolution and out-of-focus light in the Z-direction.</p></li>
+<li><p><strong>Binary masks</strong> can be applied to ignore background or select multiple regions-of-interest per image (2 or more embryos per image)</p></li>
+<li><p><strong>Macros</strong> are used to process all files in a directory in <strong>batch</strong> mode.</p></li>
+</ul>
+<section id="the-rs-fish-steps">
+<h3>The RS-FISH Steps:<a class="headerlink" href="#the-rs-fish-steps" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Calculate Anisotropy Coefficient</p></li>
+<li><p>Determine optimal settings</p></li>
+<li><p>Detect and Count Spots</p></li>
+<li><p>Optionally - Filter spots using binary mask(s)</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="let-s-detect-spots-with-smfish">
+<h2>Let’s detect spots with smFISH<a class="headerlink" href="#let-s-detect-spots-with-smfish" title="Permalink to this heading">#</a></h2>
+<section id="let-s-calculate-anisotropy-coefficient">
+<h3>1. Let’s Calculate Anisotropy Coefficient<a class="headerlink" href="#let-s-calculate-anisotropy-coefficient" title="Permalink to this heading">#</a></h3>
+<p>Click along with me…</p>
+<ul class="simple">
+<li><p><strong>Start Macro Recording</strong>. FIJI will record all your clicks, settings, and toggles by recording them. This will convert pushing and clicking into text commands. This will be helpful later as you start to write your own macros.</p>
+<ul>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">Plugins</span></code> Menu -&gt; <code class="docutils literal notranslate"><span class="pre">Macros</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Record</span></code></p></li>
+</ul>
+</li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">230726_DG3913_19_R3D.dv</span></code> if it is not open already. (hint - drat &amp; drop into the status bar)</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">-&gt;</span> <span class="pre">Color</span> <span class="pre">-&gt;</span> <span class="pre">Split</span> <span class="pre">Channels</span></code> to split the image into separate channels as RS-FISH can only work on one channel at a time.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">-&gt;</span> <span class="pre">RS-FISH</span> <span class="pre">-&gt;</span> <span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">Calculate</span> <span class="pre">Anisotropy</span> <span class="pre">Coefficient</span></code>.</p></li>
+<li><p>Select Image: <code class="docutils literal notranslate"><span class="pre">C1-230726_DG3913_19_R3D.dv</span></code> from the pull down menu. Select Detection Mode; <code class="docutils literal notranslate"><span class="pre">Gauss</span> <span class="pre">Fit</span></code></p></li>
+<li><p>Move the rectangle to a place within the embryo that has spots. Use the default Sigma and Threshold values (these typically look pretty good).</p>
+<ul>
+<li><p>You can adjust Sigma to account for larger or smaller spots or Threshold to account for darker or lighter contrast</p></li>
+<li><p>For now, let’s just use the defaults. Sigma: <code class="docutils literal notranslate"><span class="pre">1.50</span></code>. Threshold: <code class="docutils literal notranslate"><span class="pre">0.0050</span></code></p></li>
+</ul>
+</li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Done</span></code></p></li>
+<li><p>You will receive a Anisotropy Coefficient. Write it down or export/save it (your README file is a good place). (Mine was around 0.6288)</p></li>
+</ul>
+</section>
+<section id="let-s-determine-the-optimal-settings">
+<h3>2. Let’s determine the optimal settings<a class="headerlink" href="#let-s-determine-the-optimal-settings" title="Permalink to this heading">#</a></h3>
+<section id="to-determine-the-optimal-settings-we-ll-use-a-z-projection-of-channel-1">
+<h4>To determine the optimal settings, we’ll use a Z-projection of Channel 1.**<a class="headerlink" href="#to-determine-the-optimal-settings-we-ll-use-a-z-projection-of-channel-1" title="Permalink to this heading">#</a></h4>
+<p>Click along with me…</p>
+<ul class="simple">
+<li><p>Close out all extra windows and panels</p></li>
+<li><p>Drag and drop <code class="docutils literal notranslate"><span class="pre">230726_DG3913_19_R3D.dv</span></code> into the status bar to open</p></li>
+<li><p>Split out channels. Select <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">-&gt;</span> <span class="pre">Color</span> <span class="pre">-&gt;</span> <span class="pre">Split</span> <span class="pre">Channels</span></code></p></li>
+<li><p>Select Channel 1. Select <code class="docutils literal notranslate"><span class="pre">Window</span> <span class="pre">-&gt;</span> <span class="pre">C1-230726_DG3913_19_R3D.dv</span></code></p></li>
+<li><p>Z-Projection. Select <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">-&gt;</span> <span class="pre">Stacks</span> <span class="pre">-&gt;</span> <span class="pre">Z-Project</span></code></p></li>
+<li><p>Select start slice (1) and stop slice (61) and Projection Type: <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Intensity</span></code></p></li>
+<li><p>Set levels. Select <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">-&gt;</span> <span class="pre">RS-FISH</span> <span class="pre">-&gt;</span> <span class="pre">RS-FISH</span></code></p></li>
+<li><p>Select the Z-projected Channel 1 Image. Image: <code class="docutils literal notranslate"><span class="pre">MAX-C1-230726_DG3913_19_R3D.dv</span></code>. Set the values below:</p>
+<ul>
+<li><p>Mode: <code class="docutils literal notranslate"><span class="pre">Interactive</span></code></p></li>
+<li><p>Click the box to <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Detections</span> <span class="pre">to</span> <span class="pre">ROI-Manager</span></code></p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-23at6-38-41AM.png"><img alt="Screenshot of RS-FISH settings" class="align-center" src="_images/Screenshot2026-06-23at6-38-41AM.png" style="width: 50%;" /></a>
+<ul class="simple">
+<li><p>Organize your windows so that you can see both the MAX-C1 window and the RANSAC preview window.</p></li>
+<li><p>Place the rectangle within a region with mRNA spots</p></li>
+<li><p>Zoom in and use the <code class="docutils literal notranslate"><span class="pre">hand</span></code> tool from the toolkit bar to scootch to a good spot</p></li>
+<li><p>Toggle through <code class="docutils literal notranslate"><span class="pre">Sigma</span></code>, <code class="docutils literal notranslate"><span class="pre">Threshold</span></code>, <code class="docutils literal notranslate"><span class="pre">Support</span> <span class="pre">region</span> <span class="pre">radius</span></code>, <code class="docutils literal notranslate"><span class="pre">Inlier</span> <span class="pre">ratio</span></code>, <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">error</span></code>. Keep background subtraction off.</p></li>
+<li><p>Make some choices - what looks real to you?</p></li>
+<li><p>Press any <code class="docutils literal notranslate"><span class="pre">Done</span></code></p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-23at6-41-26AM.png"><img alt="Screenshot of RS-FISH options" class="align-center" src="_images/Screenshot2026-06-23at6-41-26AM.png" style="width: 100%;" /></a>
+</section>
+<section id="set-the-intensity-threshold">
+<h4>Set the intensity threshold<a class="headerlink" href="#set-the-intensity-threshold" title="Permalink to this heading">#</a></h4>
+<p>Some low-intensity spots are not real. You can remove them if you like.</p>
+<ul class="simple">
+<li><p>Organize your windows so that you can see both the <strong>MAX-C1</strong> window and the <strong>Intensity distribution</strong> window</p></li>
+<li><p>Click within the grey shaded plot to move the blue horizontal line</p></li>
+<li><p>You will see some spots disappear.</p></li>
+<li><p>Make some choices - which do you think look real?</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-23at8-47-30AM.png"><img alt="Screenshot of RS-FISH options" class="align-center" src="_images/Screenshot2026-06-23at8-47-30AM.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p>Click on <strong>OK - press to proceed to final results</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="let-s-detect-and-count-mrna-spots">
+<h3>3. Let’s detect and count mRNA spots<a class="headerlink" href="#let-s-detect-and-count-mrna-spots" title="Permalink to this heading">#</a></h3>
+<p>We will count spots in both Channel 1 (<em>set-3</em> mRNA control) and Channel 2 (<em>lin-41</em> mRNA querry). Make sure you have both of these single-channel multi-stack files <strong>C1-230505_DG3913_06_R3D.dv</strong> and <strong>C2-230505_DG3913_06_R3D.dv</strong>.</p>
+<p>Click along with me…</p>
+<ul class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">-&gt;</span> <span class="pre">RS-FISH</span> <span class="pre">-&gt;</span> <span class="pre">RS-FISH</span></code></p></li>
+<li><p>Select Image: <code class="docutils literal notranslate"><span class="pre">C1-230726_DG3913_19_R3D.dv</span></code></p></li>
+<li><p>This time, select Mode: <code class="docutils literal notranslate"><span class="pre">Advanced</span></code>. This will auto-propagate the settings you defined in the last exercise.</p></li>
+<li><p>My screen looks like this:</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-23at8-48-04AM.png"><img alt="Screenshot of RS-FISH settings" class="align-center" src="_images/Screenshot2026-06-23at8-48-04AM.png" style="width: 50%;" /></a>
+<ul class="simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+<li><p>Advanced Settings Window. You shouldn’t need to change or click anything. Just in case this is helpful, my screen looks like this…</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-23at8-48-10AM.png"><img alt="Screenshot of RS-FISH Advanced Settings" class="align-center" src="_images/Screenshot2026-06-23at8-48-10AM.png" style="width: 50%;" /></a>
+<ul class="simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+</ul>
+<section id="assess-the-results">
+<h4>Assess the results<a class="headerlink" href="#assess-the-results" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>We now have an <strong>ROI Manager</strong> (Region of Interest), a <strong>Results List</strong>, information in the <strong>Log</strong>, and our original .dv file.</p></li>
+<li><p>Check the number of spots detected in the <strong>Log</strong> file</p></li>
+<li><p>In the ROI Manager, click on <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">All</span></code></p></li>
+<li><p>Slide through the Z axis of the image file to explore what was counted as a spot</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-23at8-54-28AM.png"><img alt="Screenshot of RS-FISH Results" class="align-center" src="_images/Screenshot2026-06-23at8-54-28AM.png" style="width: 100%;" /></a>
+</section>
+<section id="save-the-results">
+<h4>Save the results<a class="headerlink" href="#save-the-results" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Save the Results list. This can be a little tricky. Click on the results list until the menu options change to only a list of four menus, like so:</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-22at5-43-33AM.png"><img alt="Screenshot of RS-FISH menus" class="align-center" src="_images/Screenshot2026-06-22at5-43-33AM.png" style="width: 20%;" /></a>
+<ul class="simple">
+<li><p>Save the file in the sub-directory 03_fiji_analysis with a name that makes sense like <code class="docutils literal notranslate"><span class="pre">260710_ch1_set3_C1-230726_DG3913_19_smFISH_localizations.csv</span></code></p></li>
+<li><p>Save the relevant portion of the logfile into a text editor. Save this also to the 03_fiji_analysis subdirectory</p></li>
+</ul>
+</section>
+<section id="repeat-for-channel-2">
+<h4>Repeat for Channel 2<a class="headerlink" href="#repeat-for-channel-2" title="Permalink to this heading">#</a></h4>
+<p>Do the same for Channel 2, the <em>lin-41</em> mRNA channel:</p>
+<ul class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">-&gt;</span> <span class="pre">RS-FISH</span> <span class="pre">-&gt;</span> <span class="pre">RS-FISH</span></code></p></li>
+<li><p>This time, select Image: <code class="docutils literal notranslate"><span class="pre">C2-230726_DG3913_19_R3D.dv</span></code></p></li>
+<li><p>Mode: <code class="docutils literal notranslate"><span class="pre">Advanced</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+</ul>
+<p>The <em>lin-41</em> mRNA has a different pattern than <em>set-3</em>. Instead of being homogenously distributed, it arranges into clusters. Use <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">All</span></code> to explore how well RS-FISH captured mRNAs found in clusters.</p>
+<ul class="simple">
+<li><p>Save the results files here, too:</p>
+<ul>
+<li><p>Save the file in the sub-directory 03_fiji_analysis with a name that makes sense like <code class="docutils literal notranslate"><span class="pre">260710_ch2_lin-41_C2_230726_DG3913_19_smFISH_localizations.csv</span></code></p></li>
+<li><p>Save the relevant portion of the logfile into a text editor. Save this also to the 03_fiji_analysis subdirectory</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="let-s-filter-spots-using-binary-mask-s">
+<h2>4. Let’s filter spots using binary mask(s)<a class="headerlink" href="#let-s-filter-spots-using-binary-mask-s" title="Permalink to this heading">#</a></h2>
+<p>Sometimes, you want to restrict the mRNA spot counting to a small portion of the image. This may be important if there is debris in the prep or multiple embryos in one image.</p>
+<p>To do this, we will make a mask, a black-and-white outline of the region we want to quantify versus the region we want to ignore. There are many ways to make a mask. Let’s walk through two possible options for this process.</p>
+<p>We can use any of the channels to create the mask. For this process, let’s go ahead and select Channel 3 to make the mask because it is very obvious where the outline of the embryo is.</p>
+<p>First, let’s duplicate Channel 3. Click along…</p>
+<ul class="simple">
+<li><p>Under the <code class="docutils literal notranslate"><span class="pre">Window</span></code> Menu, select the <code class="docutils literal notranslate"><span class="pre">C3</span></code> Channel image</p></li>
+<li><p>To duplicate, go to <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">-&gt;</span> <span class="pre">Duplicate...</span></code></p></li>
+<li><p>Name the new image <code class="docutils literal notranslate"><span class="pre">C3_230726_DG3913_19_R3D_mask1.dv</span></code></p></li>
+<li><p>Click to select <code class="docutils literal notranslate"><span class="pre">Duplicate</span> <span class="pre">stack</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+<li><p>Repeat to create <code class="docutils literal notranslate"><span class="pre">C3_230726_DG3913_19_R3D_mask2.dv</span></code></p></li>
+</ul>
+<p>For Option 1, we will use an automated approach to create a dynamic, 3D mask. For Option 2, we will hand draw a boundary that will be constant through all z-stacks.</p>
+<section id="option-1-automated-3d-binary-mask">
+<h3>Option 1 - automated, 3D binary mask<a class="headerlink" href="#option-1-automated-3d-binary-mask" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Select the image <code class="docutils literal notranslate"><span class="pre">C3_230726_DG3913_19_R3D_mask1.dv</span></code></p></li>
+<li><p>Slide through the Z axis until you are in a middle slice.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">-&gt;</span> <span class="pre">Make</span> <span class="pre">Binary</span></code></p></li>
+<li><p>Select the following options…</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-23at9-11-59AM.png"><img alt="Screenshot of RS-FISH mask - red" class="align-center" src="_images/Screenshot2026-06-23at9-11-59AM.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+<li><p>The red area will convert to white. Slide through the Z-stacks to see how the mask changes with each slice.</p></li>
+<li><p>To save the mask, go to <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">As</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Tiff...</span></code></p></li>
+<li><p>Save in a masks sub-directory.</p></li>
+</ul>
+</section>
+<section id="option-2-hand-drawn-2d-mask">
+<h3>Option 2 - hand-drawn, 2D mask<a class="headerlink" href="#option-2-hand-drawn-2d-mask" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Select the image <code class="docutils literal notranslate"><span class="pre">C3_230726_DG3913_19_R3D_mask2.dv</span></code></p></li>
+<li><p>From the toolbar, select the <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> tool</p></li>
+<li><p>Draw an outline around the embryo with the polygon tool. Be sure to connect the starting and ending nodes together to create a shape. It should look like this…</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-23at9-12-35AM.png"><img alt="Screenshot of RS-FISH polygone" class="align-center" src="_images/Screenshot2026-06-23at9-12-35AM.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>To make the mask, selct <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-&gt;</span> <span class="pre">Selection</span> <span class="pre">-&gt;</span> <span class="pre">Create</span> <span class="pre">Mask</span></code></p></li>
+<li><p>This will create a new 2D image file.</p></li>
+<li><p>Save it in your same masks, sub-directory.</p></li>
+</ul>
+</section>
+<section id="filter-mrna-spot-detection-by-mask">
+<h3>Filter mRNA spot detection by mask<a class="headerlink" href="#filter-mrna-spot-detection-by-mask" title="Permalink to this heading">#</a></h3>
+<p>To use the mask, you must first run mRNA spot detection and then filter out un-masked spots.</p>
+<ul class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">-&gt;</span> <span class="pre">RS-FISH</span> <span class="pre">-&gt;</span> <span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">Mask</span> <span class="pre">Filtering</span></code></p></li>
+<li><p>Select the directory containing your .csv output files</p></li>
+<li><p>Select one of your masks</p></li>
+<li><p>Select an output directory</p></li>
+<li><p>Push <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+</ul>
+<p>You should now have a directory with filtered .csv files</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fijiIntro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Intro to FIJI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="macros.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Automating FIJI with Macros</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-resources">References and Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-plugins">About Plugins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-download-and-install-rs-fish">Let’s Download and Install RS-FISH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rs-fish-approach">The RS-FISH Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rs-fish-steps">The RS-FISH Steps:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-detect-spots-with-smfish">Let’s detect spots with smFISH</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-calculate-anisotropy-coefficient">1. Let’s Calculate Anisotropy Coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-determine-the-optimal-settings">2. Let’s determine the optimal settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#to-determine-the-optimal-settings-we-ll-use-a-z-projection-of-channel-1">To determine the optimal settings, we’ll use a Z-projection of Channel 1.**</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-intensity-threshold">Set the intensity threshold</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-detect-and-count-mrna-spots">3. Let’s detect and count mRNA spots</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assess-the-results">Assess the results</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-results">Save the results</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#repeat-for-channel-2">Repeat for Channel 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-filter-spots-using-binary-mask-s">4. Let’s filter spots using binary mask(s)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-automated-3d-binary-mask">Option 1 - automated, 3D binary mask</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-hand-drawn-2d-mask">Option 2 - hand-drawn, 2D mask</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-mrna-spot-detection-by-mask">Filter mRNA spot detection by mask</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Erin Nishimura
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
