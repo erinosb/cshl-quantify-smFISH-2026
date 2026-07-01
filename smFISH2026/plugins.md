@@ -34,6 +34,7 @@ Today, we will use the Radial Symmetry Plugin, also called RS-FISH. I tcan be in
   * Type `radial symmetry` into the search bar
   * Select the box to the left of `Radial Symmetry`
   * Click `Apply and Close`
+  * Click `Apply Changes`
   * Restart FIJI
   * Check your installation was successful. Go to the `Plugin` Menu. You should now see the RS-FISH Plugin listed
 
