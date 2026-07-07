@@ -26,7 +26,7 @@ Please try to install FIJI on your laptop before this session.
 | ~20 min | intro to FIJI | Navigating the software, a tour of basic functions |
 | ~30 min | extending FIJI with plugins | practicum on mRNA spot detection in FIJI using the RS-FISH plugin | 
 | ~15 min | automating FIJI with macros | practicum on batch processing images in FIJI using macros | 
-| ~10 min | alternatives to FIJI | bonus content on big-fish and wormLib | 
+| ~10 min | alternatives to FIJI | bonus content on other software options | 
 
 
 ## Learning Objectives 
