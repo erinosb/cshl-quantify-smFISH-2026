@@ -5,7 +5,6 @@ This book accompanies the CSHL Asia Workshop on Advanced *C. elegans* Genetics a
 To launch this website please click here: [cshl-smFISH-quantify-2026](https://erinosb.github.io/cshl-quantify-smFISH-2026/
 
 
-
 **Author:** Erin Osborne Nishimura
 
 **Date:** July 5 - 19th, 2026
