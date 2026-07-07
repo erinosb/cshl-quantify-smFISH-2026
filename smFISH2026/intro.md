@@ -2,7 +2,7 @@
 
 Welcome to the `cshl-quantify-smFISH-2026` book.
 
-We will explore FIJI, an open source resource for exploring, displaying, and quantifying images. We will use RS-FISH, a user-contributed FIJI Plugin that extends FIJI's basic function to quantify the number of smFISH mRNA spots in an image. We will use FIJI macros to automate the spot detection process across a series of images. Finally, I will explain some alternatives to FIJI like [Cell Profiler](https://cellprofiler.org/), an open source software and [Imaris](https://imaris.oxinst.com/), a commercial option.
+We will explore FIJI, an open source resource for exploring, displaying, and quantifying images. We will use RS-FISH, a user-contributed FIJI Plugin that extends FIJI's basic function to quantify the number of smFISH mRNA spots in an image. We will use FIJI macros to automate the spot detection process across a series of images. Finally, I will introduce alternatives to FIJI like [Cell Profiler](https://cellprofiler.org/), an open source software and [Imaris](https://imaris.oxinst.com/), a commercial option.
 
 Images of _C. elegans_ early embryos will be used as input. Tables of mRNA spot counts will be captured as output. Tables can be used to plot mRNA abundance, mRNA co-localization in relation to other markers, or clustering.
 
@@ -48,7 +48,7 @@ Students will leave with an appreciation of the extensibility of FIJI plugins an
 
 ## Demo Dataset
 
-As a demonstration of smFISH spot detection, we will use 8x image files. These images were captured in our recent study [Spike et al., 2026](https://journals.biologists.com/dev/article/153/11/dev205295/371892/). In this paper, we explored the _lin-41_ mRNA, a transcript that promotes oocyte maturation. LIN-41 protein and _lin-41_ mRNA undergo rapid decay after fertilization.  
+As a demonstration of smFISH spot detection, we will use 8x image files. These images were captured in our recent study Spike et al., 2026. In this paper, we explored the _lin-41_ mRNA, a transcript that promotes oocyte maturation. LIN-41 protein and _lin-41_ mRNA undergo rapid decay after fertilization.  
 
 ```{image} images/Screenshot2026-06-23at5-07-35AM.png
 :alt: slide of LIN-41 and SPN-4 expression
