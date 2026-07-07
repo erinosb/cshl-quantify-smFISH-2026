@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Automating FIJI with Macros &#8212; Quantifying smFISH 2026</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'macros';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Alternatives to FIJI: Big-FISH and wormLib" href="alternatives.html" />
+    <link rel="prev" title="Extending FIJI With Plugins" href="plugins.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/smFISH_square.png" class="logo__image only-light" alt="Quantifying smFISH 2026 - Home"/>
+    <script>document.write(`<img src="_static/smFISH_square.png" class="logo__image only-dark" alt="Quantifying smFISH 2026 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Quantifying smFISH, 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Starting a computational project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fijiIntro.html">Intro to FIJI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Extending FIJI With Plugins</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Automating FIJI with Macros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives.html">Alternatives to FIJI: Big-FISH and wormLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Final Thoughts and Resources</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/erinosb/cshl-smFISH-quantify-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/erinosb/cshl-smFISH-quantify-2026/issues/new?title=Issue%20on%20page%20%2Fmacros.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/macros.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Automating FIJI with Macros</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-resources">References and Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-macros">What are macros?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-explore-a-simple-macro">Let’s explore a simple macro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-run-the-rs-fish-macro">Let’s run the RS-FISH macro</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="automating-fiji-with-macros">
+<h1>Automating FIJI with Macros<a class="headerlink" href="#automating-fiji-with-macros" title="Permalink to this heading">#</a></h1>
+<section id="references-and-resources">
+<h2>References and Resources<a class="headerlink" href="#references-and-resources" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://imagej.net/scripting/macro">FIJI Macros</a></p></li>
+<li><p><a class="reference external" href="https://imagej.net/ij/docs/macro_reference_guide.pdf">IJM Language Programmer’s Reference Guide</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="what-are-macros">
+<h2>What are macros?<a class="headerlink" href="#what-are-macros" title="Permalink to this heading">#</a></h2>
+<p>Recall back to the start of this tutorial. I asked you to start the macro recorder. Let’s return to this window (if yours is still open) and see what is there.</p>
+<a class="reference internal image-reference" href="_images/Screenshot2026-06-22at6-21-47PM.png"><img alt="Screenshot of FIJI macro recorder" class="align-center" src="_images/Screenshot2026-06-22at6-21-47PM.png" style="width: 80%;" /></a>
+<p>The macro recorder converted all the clicking, selecting, and toggling into text.</p>
+<p>Macros are ordered sequences of text-based commands that FIJI can implement in lieu of the graphical user interface (GUI). Macros are basically programs, scripts, or codes that are specific to FIJI. FIJI Macros are written in ImageJ Macro Language (IJM), a specialized language. However, macros can also be implemented in JavaScript and Python (Jython). The IJM language is very similar to other programming languages and is easy to use.</p>
+<p>A few characteristics that set it apart:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">////////////////////////////////////////////////</span>
+<span class="c1">// Two forward slashes are comments</span>
+<span class="c1">////////////////////////////////////////////////</span>
+
+<span class="c1">// Variables are specified with equals sign (=) and statements end in a semi-colon (;)</span>
+<span class="nx">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1024</span><span class="p">;</span><span class="w"> </span>
+
+<span class="c1">// Messages are enclosed in quotes and can be concatenated with plus (+)</span>
+<span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;World!&quot;</span><span class="p">;</span><span class="w"> </span>
+
+<span class="c1">// built in functions use parentheses to enclose arguments and options</span>
+<span class="nx">newImage</span><span class="p">(</span><span class="s2">&quot;My pretty new image&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8-bit black&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">640</span><span class="p">,</span><span class="w"> </span><span class="mf">480</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+
+<span class="c1">// new functions can be created by the user</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">closeImageByTitle</span><span class="p">(</span><span class="nx">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">selectWindow</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">close</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">////////////////////////////////////////////////</span>
+<span class="c1">// Flow control works like many other languages</span>
+<span class="c1">////////////////////////////////////////////////</span>
+
+<span class="c1">// if/else if/else flow control</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">is</span><span class="p">(</span><span class="s2">&quot;binary&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The current image is binary&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The current image is not binary&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// for loops are common</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">image</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">imageCount</span><span class="p">;</span><span class="w"> </span><span class="nx">image</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">selectImage</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">rename</span><span class="p">(</span><span class="s2">&quot;image-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">image</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// while and do loops are also possible</span>
+</pre></div>
+</div>
+<p>For more information, see the references at the top of this page.</p>
+<p>Overall, if you are used to writing in linux/bash, python, R, javascript, or java, this should be an easy learning curve. If you don’t yet code - just start! Starting with any coding language will make the next languages easier as most of the concepts (variables, flow control, loops, and functions) will all be the same.</p>
+<p>Yes, IJM is a language, but let’s be honest, users don’t usually just sit down and compose a FIJI macro like you would write an e-mail to a friend. Instead, most macros start out as macro recordings. Or, developers write snippets that users can then modify, or hack, for their purposes.</p>
+<p>Indeed, RS-FISH comes with an <a class="reference external" href="https://github.com/PreibischLab/RS-FISH/blob/master/documents/example_scripts/rs_macro.ijm">example macro</a>.</p>
+</section>
+<hr class="docutils" />
+<section id="let-s-explore-a-simple-macro">
+<h2>Let’s explore a simple macro<a class="headerlink" href="#let-s-explore-a-simple-macro" title="Permalink to this heading">#</a></h2>
+<p>Let’s open a macro that I have written for you…</p>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">-&gt;</span> <span class="pre">Macros</span> <span class="pre">-&gt;</span> <span class="pre">Edit</span> <span class="pre">...</span> </code></p></li>
+<li><p>Select the script <code class="docutils literal notranslate"><span class="pre">~/260710_quantify_smFISH/02_scripts/split_smFISH_channels.ijm</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Open</span></code></p></li>
+</ul>
+<p>Notice how comments separate the macro into sections.</p>
+<ul class="simple">
+<li><p><strong>Header</strong> this section is titled <strong>Select Your Parameters</strong>. It contains code that the user is expected to alter.</p></li>
+<li><p>The header also includes some description of how the user can hack the code</p></li>
+<li><p>Section below the header is the macro script itself and has the commands and instructions</p></li>
+<li><p>Notice how comments within the code help to explain each step</p></li>
+<li><p>Notice that there is a <strong>for</strong> loop that will iterate the same commands over every file in a directory.</p></li>
+</ul>
+<p>We will not run this macro, but if we did, we would simply change the header content, change any lines of the code we wanted to customize, and then press <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p>
+<p>Instead, I have already run this code for you. It splits each .dv file into a C1 (channel 1) stack and a C2 (channel 2) stack. These are located in <code class="docutils literal notranslate"><span class="pre">~/260710_quantify_smFISH/04_fiji_batch_analysis/01_single_channel_input</span></code></p>
+<ul class="simple">
+<li><p>Explore these files</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="let-s-run-the-rs-fish-macro">
+<h2>Let’s run the RS-FISH macro<a class="headerlink" href="#let-s-run-the-rs-fish-macro" title="Permalink to this heading">#</a></h2>
+<p>Now, let’s run the RS-FISH macro. This will process all our images, both channels, in batch.</p>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">-&gt;</span> <span class="pre">Macros</span> <span class="pre">-&gt;</span> <span class="pre">Edit</span> <span class="pre">...</span> </code></p></li>
+<li><p>Select the script <code class="docutils literal notranslate"><span class="pre">~/260710_quantify_smFISH/02_scripts/rs-macro.ijm</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Open</span></code></p></li>
+</ul>
+<p>Let’s customize this script for our own use</p>
+<ul class="simple">
+<li><p>Change the input and timestamp directories to reflect your own file structure</p></li>
+<li><p>Change any parameters to match your own parameters</p></li>
+<li><p>Now, all the samples will be run with the identical parameters.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Run</span></code></p></li>
+</ul>
+<p>Explore the output</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Conditions</p></th>
+<th class="head"><p>mRNA surveyed</p></th>
+<th class="head"><p>mRNA detections</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>full-length lin-41 3’UTR</p></td>
+<td><p>lin-41</p></td>
+<td><p>691, 457, 414, 158</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fox-deletion in lin-41 3’UTR</p></td>
+<td><p>lin-41</p></td>
+<td><p>3690, 3690, 2396, 1718</p></td>
+</tr>
+<tr class="row-even"><td><p>full-length lin-41 3’UTR</p></td>
+<td><p>set-3</p></td>
+<td><p>693, 987, 1162, 1018</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fox-deletion in lin-41 3’UTR</p></td>
+<td><p>set-3</p></td>
+<td><p>652, 455, 661, 741</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="plugins.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Extending FIJI With Plugins</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="alternatives.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Alternatives to FIJI: Big-FISH and wormLib</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-resources">References and Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-macros">What are macros?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-explore-a-simple-macro">Let’s explore a simple macro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-run-the-rs-fish-macro">Let’s run the RS-FISH macro</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Erin Nishimura
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
